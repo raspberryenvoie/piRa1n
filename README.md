@@ -10,6 +10,6 @@ A. Download the [Raspberry Imager](https://www.raspberrypi.org/downloads/) softw
 B. Set up Raspbian  
 Plug the MicroSD Card in the Raspberry Pi 4 and turn it on.  
 If you have a monitor, a mouse and a keyboard:  
-  Connect them to the Raspberry Pi and configure the OS with the instructions displayed on the screen.  
+...Connect them to the Raspberry Pi and configure the OS with the instructions displayed on the screen.  
 Else:  
-  Configure the OS with [this guide](https://hackernoon.com/raspberry-pi-headless-install-462ccabd75d0) from step 3.  
+...Configure the OS with [this guide](https://hackernoon.com/raspberry-pi-headless-install-462ccabd75d0) from step 3.  

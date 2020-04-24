@@ -13,3 +13,4 @@ If you have a monitor, a mouse and a keyboard:
 ...Connect them to the Raspberry Pi and configure the OS with the instructions displayed on the screen.⋅⋅   
 Else:  
 ...Configure the OS with [this guide](https://hackernoon.com/raspberry-pi-headless-install-462ccabd75d0) from step 3.⋅⋅   
+⋅⋅⋅Note that this line is separate, but within the same paragraph.⋅⋅

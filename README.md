@@ -19,4 +19,4 @@ Go in the directory: `cd piRa1n`\
 Make installer executable: `sudo chmod +x install_piRa1n.sh`\
 Execute the installer: `./install_piRa1n.sh`\
 
-### 3. Run pi
+### 3. Run piRa1n at Startup

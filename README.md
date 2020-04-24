@@ -22,4 +22,4 @@ Execute the installer: `./install_piRa1n.sh`
 ### 3. Run piRa1n at Startup
 Go in the directory: `cd /home/pi/piRa1n`\
 Make run_piRa1n_at_startup.sh executable: `sudo chmod +x run_piRa1n_at_startup.sh`
-Run run_piRa1n_at_startup.sh: `./run_piRa1n_at_startup.sh`
+Run run_piRa1n_at_startup.sh (This will reboot the Pi.) : `./run_piRa1n_at_startup.sh`

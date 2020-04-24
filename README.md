@@ -1,6 +1,5 @@
 # piRa1n
-If you want to jailbreak your iDevice and you do not have access to your computer, you can create your own box with a Raspberry Pi 4 and carry it anywhere, you just have to connect it to a powerbank.\
-piRa1n uses [Checkra1n](https://checkra.in/).
+If you want to jailbreak your iDevice and you do not have access to your computer, you can create your own box with a Raspberry Pi 4 and carry it anywhere, you just have to connect it to a powerbank. (piRa1n uses [Checkra1n](https://checkra.in/).)
 
 ⚠️ **This only works with a Raspberry Pi 4!**
 
@@ -18,9 +17,9 @@ Go in pi directory: `cd /home/pi`
 Clone the repository: `git clone https://github.com/raspberryenvoie/piRa1n.git`\
 Go in the directory: `cd piRa1n`\
 Make installer executable: `sudo chmod +x install_piRa1n.sh`\
-Execute the installer: `./install_piRa1n.sh`\
+Execute the installer: `./install_piRa1n.sh`
 
 ### 3. Run piRa1n at Startup
 Go in the directory: `cd /home/pi/piRa1n`\
 Make run_piRa1n_at_startup.sh executable: `sudo chmod +x run_piRa1n_at_startup.sh`
-Run run_piRa1n_at_startup.sh: `./run_piRa1n_at_startup.sh
+Run run_piRa1n_at_startup.sh: `./run_piRa1n_at_startup.sh`

@@ -9,8 +9,5 @@ If you want to jailbreak your iDevice and you do not have access to your compute
 A. Download the [Raspberry Imager](https://www.raspberrypi.org/downloads/) software and install Raspbian on your MicroSD Card.  
 B. Set up Raspbian  
 Plug the MicroSD Card in the Raspberry Pi 4 and turn it on.  
-If you have a monitor, a mouse and a keyboard:  
-...Connect them to the Raspberry Pi and configure the OS with the instructions displayed on the screen.⋅⋅   
-Else:  
-...Configure the OS with [this guide](https://hackernoon.com/raspberry-pi-headless-install-462ccabd75d0) from step 3.⋅⋅   
-⋅⋅⋅Note that this line is separate, but within the same paragraph.⋅⋅
+If you have a monitor, a mouse and a keyboard: Connect them to the Raspberry Pi and configure the OS with the instructions displayed on the screen.   
+Else: Configure the OS with [this guide](https://hackernoon.com/raspberry-pi-headless-install-462ccabd75d0) from step 3.   

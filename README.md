@@ -13,7 +13,7 @@ If you have a monitor, a mouse and a keyboard: Connect them to the Raspberry Pi 
 Else: Configure the OS with [this guide](https://hackernoon.com/raspberry-pi-headless-install-462ccabd75d0) from step 3.   
 
 ### Install checkra1n
-Clone the repository: `git clone https://github.com/raspberryenvoie/piRa1n.git`
-Go in the directory: `cd piRa1n`
-Make installer executable: `chmod +x install_piRa1n.sh`
-Execute the installer: `./install_piRa1n.sh`
+Clone the repository: `git clone https://github.com/raspberryenvoie/piRa1n.git` 
+Go in the directory: `cd piRa1n`  
+Make installer executable: `sudo chmod +x install_piRa1n.sh` 
+Execute the installer: `./install_piRa1n.sh`  

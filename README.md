@@ -14,4 +14,4 @@ Else: Configure the OS with [this guide](https://hackernoon.com/raspberry-pi-hea
 
 ### Install checkra1n
 Clone the repository:  
-https://github.com/raspberryenvoie/piRa1n.git
+`git clone https://github.com/raspberryenvoie/piRa1n.git`

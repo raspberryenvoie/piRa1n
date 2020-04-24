@@ -1,5 +1,6 @@
 # piRa1n
-If you want to jailbreak your iDevice and you do not have access to your computer, you can create your own box with a Raspberry Pi 4 and carry it anywhere, you just have to connect it to a powerbank. (piRa1n uses [Checkra1n](https://checkra.in/).)\⚠️ **This only works with a Raspberry Pi 4!**
+If you want to jailbreak your iDevice and you do not have access to your computer, you can create your own box with a Raspberry Pi 4 and carry it anywhere, you just have to connect it to a powerbank. (piRa1n uses [Checkra1n](https://checkra.in/).)\
+⚠️ **This only works with a Raspberry Pi 4!**
 
 ## ⚠️ Disclaimer
 If you use piRa1n please note that I am in no way responsible for any damage to your devices.

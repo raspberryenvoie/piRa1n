@@ -21,6 +21,6 @@ echo ' [Unit]
 sudo chmod 644 /lib/systemd/system/piRa1n.service
 sudo systemctl daemon-reload
 sudo systemctl enable piRa1n.service
-echo 'Done! Raspbian will now reboot.\nTo jailbreak your iDevice, put it in DFU mode and plug it to the Pi.'
-sleep 3
+echo 'Done! Raspbian will now reboot.\nTo jailbreak your iDevice, put it in DFU mode and plug it to the Pi.\nEnjoy!'
+sleep 4
 sudo reboot #Reboot Pi

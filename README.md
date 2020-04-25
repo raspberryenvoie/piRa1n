@@ -30,7 +30,7 @@ Else: Configure the OS with [this guide](https://www.jamesfmackenzie.com/2017/01
 
 ### 2. Install piRa1n
 Copy and paste the following command into the terminal application and press the enter key.\
-`sudo apt update && sudo apt upgrade -y &&  sudo apt install usbmuxd -y && cd /home/pi && git clone https://github.com/raspberryenvoie/piRa1n.git && cd piRa1n && sudo chmod +x install_piRa1n.sh update_checkra1n.sh && ./install_piRa1n.sh`
+`sudo apt update && sudo apt upgrade -y &&  sudo apt install usbmuxd -y && cd /home/pi && git clone https://github.com/raspberryenvoie/piRa1n.git && cd piRa1n && sudo chmod +x install_piRa1n.sh update_checkra1n.sh && sudo sh install_piRa1n.sh`
 
 You're done 👏! Now connect the Raspberry Pi 4 to a power bank. After that, plug you iDevice to the Pi. Put the iDevice in [DFU mode](https://www.reddit.com/r/jailbreak/wiki/dfumode) and let piRa1n do the rest! Carry it anywhere!
 

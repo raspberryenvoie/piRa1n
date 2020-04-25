@@ -6,7 +6,6 @@ sudo apt install usbmuxd -y
 wget https://assets.checkra.in/downloads/linux/cli/arm/1ed46fb34c72ee942a1af185fd5347b999f4bba667d594dd56554e3b3d3ea417/checkra1n-armel -O /home/pi/piRa1n/piRa1n #Download Checkra1n
 sudo chmod +x /home/pi/piRa1n/piRa1n /home/pi/piRa1n/piRa1n.sh /home/pi/piRa1n/update_checkra1n.sh /home/pi/piRa1n/piRa1n_no_automatic_shutdown.sh #Make scripts executable
 #The following commands will enable piRa1n at startup
-echo > /lib/systemd/system/piRa1n.service | sudo tee -a /lib/systemd/system/piRa1n.service
 echo ' [Unit]
  Description=Checkra1n
  After=multi-user.target
@@ -17,7 +16,7 @@ echo ' [Unit]
  ExecStart=sudo /home/pi/piRa1n/piRa1n.sh
 
  [Install]
- WantedBy=multi-user.target' | sudo tee -a /lib/systemd/system/piRa1n.service
+ WantedBy=multi-user.target' | sudo tee /lib/systemd/system/piRa1n.service
 sudo chmod 644 /lib/systemd/system/piRa1n.service
 sudo systemctl daemon-reload
 sudo systemctl enable piRa1n.service

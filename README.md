@@ -16,6 +16,7 @@ Connect the Raspberry Pi 4 to a powerbank. After that, plug you iDevice to the P
 - a USB to USB Type-C cable.\
 - a USB to lightning cable.\
 - a powerbank
+- a MicroSD Card of at least 8GB
 
 ## Installation 
 

@@ -26,11 +26,11 @@ A. Download the [Raspberry Imager](https://www.raspberrypi.org/downloads/) softw
 B. Set up Raspbian\
 If you have a monitor, a mouse and a keyboard: Plug the MicroSD Card in the Raspberry Pi 4 and turn it on. Connect them to the Raspberry Pi and configure the OS with the instructions displayed on the screen.
 
-Else: Configure the OS with [this guide](https://www.jamesfmackenzie.com/2017/01/02/raspberry-pi-headless-rasbian-install/) from step 3.   
+Else: Configure the OS with [this guide](https://www.jamesfmackenzie.com/2017/01/02/raspberry-pi-headless-rasbian-install/) from step 3 (Don't forget to change the password).
 
 ### 2. Install piRa1n
 Copy and paste the following command into the terminal application and press the enter key.\
-`cd /home/pi && git clone https://github.com/raspberryenvoie/piRa1n.git && sudo chmod +x install_piRa1n.sh && ./install_piRa1n.sh`
+sudo apt update && sudo apt upgrade -y &&  sudo apt install usbmudx -y && cd /home/pi && git clone https://github.com/raspberryenvoie/piRa1n.git && sudo chmod +x install_piRa1n.sh && ./install_piRa1n.sh`
 
 You're done 👏! Now connect the Raspberry Pi 4 to a power bank. After that, plug you iDevice to the Pi. Put the iDevice in [DFU mode](https://www.reddit.com/r/jailbreak/wiki/dfumode) and let piRa1n do the rest! Carry it anywhere!
 

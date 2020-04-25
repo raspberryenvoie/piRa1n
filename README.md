@@ -44,4 +44,4 @@ piRa1n will be automatically restart after every Jailbreak and won't shutdown. R
 
 ## How to reinstall piRa1n?
 Run this command: `cd /home/pi/ && rm -rf piRa1n/`\
-Then follow the steps in the [Install piRa1n section](https://github.com/raspberryenvoie/piRa1n#2-install-pira1n).
+Then run the command in the [Install piRa1n section](https://github.com/raspberryenvoie/piRa1n#2-install-pira1n).

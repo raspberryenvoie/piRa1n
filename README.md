@@ -8,7 +8,7 @@ If you use piRa1n please note that I am in no way responsible for any damage to 
 ## How does it work?
 piRa1n jailbreak your iDevice using [Checkra1n](https://checkra.in/).
 
-Connect the Raspberry Pi 4 to a powerbank. After that plug you iDevice to the Pi. Put the iDevice in DFU mode and let piRa1n to the rest!
+Connect the Raspberry Pi 4 to a powerbank. After that, plug you iDevice to the Pi. Put the iDevice in DFU mode and let piRa1n do the rest!
 
 ## Parts list
 - a Raspberry Pi 4\
@@ -21,8 +21,7 @@ Connect the Raspberry Pi 4 to a powerbank. After that plug you iDevice to the Pi
 ### 1. Install and set up Raspbian
 A. Download the [Raspberry Imager](https://www.raspberrypi.org/downloads/) software and install Raspbian "A port of Debian with the Raspberry Pi Desktop (Recommended) on your MicroSD Card.\
 B. Set up Raspbian\
-Plug the MicroSD Card in the Raspberry Pi 4 and turn it on.\
-If you have a monitor, a mouse and a keyboard: Connect them to the Raspberry Pi and configure the OS with the instructions displayed on the screen.\
+If you have a monitor, a mouse and a keyboard: Plug the MicroSD Card in the Raspberry Pi 4 and turn it on. Connect them to the Raspberry Pi and configure the OS with the instructions displayed on the screen.\
 Else: Configure the OS with [this guide](https://hackernoon.com/raspberry-pi-headless-install-462ccabd75d0) from step 3.   
 
 ### 2. Install piRa1n

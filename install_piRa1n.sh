@@ -4,7 +4,7 @@ wget https://assets.checkra.in/downloads/linux/cli/arm/1ed46fb34c72ee942a1af185f
 sudo chmod +x /home/pi/piRa1n/piRa1n #Make script executable
 sudo chmod +x /home/pi/piRa1n/piRa1n.sh #Make script executable
 #The following commands will enable piRa1n at startup
-echo' [Unit]
+echo ' [Unit]
  Description=Checkra1n
  After=multi-user.target
 

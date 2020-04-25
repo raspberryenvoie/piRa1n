@@ -14,7 +14,7 @@ sudo sh echo' [Unit]
  ExecStart=sudo /home/pi/piRa1n/piRa1n.sh
 
  [Install]
- WantedBy=multi-user.target' > /lib/systemd/system/piRa1n.service
+ WantedBy=multi-user.target' | sudo tee -a /lib/systemd/system/piRa1n.service
 sudo chmod 644 /lib/systemd/system/piRa1n.service
 sudo systemctl daemon-reload
 sudo systemctl enable piRa1n.service

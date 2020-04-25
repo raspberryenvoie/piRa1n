@@ -6,7 +6,7 @@ If you want to jailbreak your iDevice and you do not have access to your compute
 If you use piRa1n please note that I am in no way responsible for any damage to your devices.
 
 ## How does it work?
-piRa1n jailbreak your iDevice using [Checkra1n](https://checkra.in/).\
+piRa1n jailbreak your iDevice using [Checkra1n](https://checkra.in/).
 
 Connect the Raspberry Pi 4 to a powerbank. After that plug you iDevice to the Pi. Put the iDevice in DFU mode and let piRa1n to the rest!
 

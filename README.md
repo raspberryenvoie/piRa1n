@@ -33,7 +33,6 @@ Copy and paste the following command into the terminal application and press the
 `cd /home/pi && git clone https://github.com/raspberryenvoie/piRa1n.git && cd piRa1n && sudo chmod +x install_piRa1n.sh && ./install_piRa1n.sh`
 
 You're done 👏!\
-⚠️ Before jailbreaking your device, make an [iCloud/iTunes backup](https://support.apple.com/en-us/HT203977)
 You want to jailbreak? Connect the Raspberry Pi 4 to a power bank. After that, plug you iDevice to the Pi. Put the iDevice in [DFU mode](https://www.reddit.com/r/jailbreak/wiki/dfumode) and let piRa1n do the rest! Once your iDevice is jailbroken, the Pi will be shutdown. You can unplug the Pi from the power bank. Carry it anywhere!
 
 ## How to update Checkra1n?
@@ -48,3 +47,6 @@ If you want to restore the default behavior (automatically shutdown Pi after eve
 ## Having issues? Try to reinstall piRa1n
 Run this command: `cd /home/pi/ && rm -rf piRa1n/`\
 Then run the command in the [Install piRa1n section](https://github.com/raspberryenvoie/piRa1n#2-install-pira1n).
+
+## Uninstall piRa1n
+Execute this command: `cd /home/pi/piRa1n && ./uninstall_piRa1n.sh`

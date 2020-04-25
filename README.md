@@ -5,6 +5,15 @@ If you want to jailbreak your iDevice and you do not have access to your compute
 ## ⚠️ Disclaimer
 If you use piRa1n please note that I am in no way responsible for any damage to your devices.
 
+## How does it work?
+Connect the Raspberry Pi 4 to a powerbank. After that plug you iDevice to the Pi. Put the iDevice in DFU mode and let piRa1n to the rest!
+
+## Parts list
+- a Raspberry Pi 4\
+- a USB to USB Type-C cable.\
+- a USB to lightning cable.\
+- a powerbank
+
 ## Installation 
 
 ### 1. Install and set up Raspbian
@@ -15,8 +24,7 @@ If you have a monitor, a mouse and a keyboard: Connect them to the Raspberry Pi 
 Else: Configure the OS with [this guide](https://hackernoon.com/raspberry-pi-headless-install-462ccabd75d0) from step 3.   
 
 ### 2. Install piRa1n
-Run the following commands in the terminal application ![terminal application](https://www.raspberrypi.org/documentation/usage/terminal/images/terminal.png "Logo Title Text 1").
-
+Copy and paste each of the following commands into the terminal application and press the Enter key.\
 Go in pi directory: `cd /home/pi`
 Clone the repository: `git clone https://github.com/raspberryenvoie/piRa1n.git`\
 Go in the directory: `cd piRa1n`\

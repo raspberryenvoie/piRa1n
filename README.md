@@ -11,7 +11,7 @@ piRa1n jailbreak your iDevice using [Checkra1n](https://checkra.in/).
 Connect the Raspberry Pi 4 to a powerbank. After that, plug you iDevice to the Pi. Put the iDevice in DFU mode and let piRa1n do the rest!
 
 ## Parts list
-- a Raspberry Pi 4\
+- a Raspberry Pi 4 with either 1GB, 2GB, 4GB of RAM (1GB of RAM is enough so I recommend the 1GB version).
 - a USB to USB Type-C cable.\
 - a USB to lightning cable.\
 - a powerbank

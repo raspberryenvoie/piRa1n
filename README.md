@@ -8,13 +8,15 @@ If you use piRa1n please note that I am in no way responsible for any damage to 
 ## Installation 
 
 ### 1. Install and set up Raspbian
-A. Download the [Raspberry Imager](https://www.raspberrypi.org/downloads/) software and install Raspbian on your MicroSD Card.  
-B. Set up Raspbian  
-Plug the MicroSD Card in the Raspberry Pi 4 and turn it on.  
-If you have a monitor, a mouse and a keyboard: Connect them to the Raspberry Pi and configure the OS with the instructions displayed on the screen.   
+A. Download the [Raspberry Imager](https://www.raspberrypi.org/downloads/) software and install Raspbian "A port of Debian with the Raspberry Pi Desktop (Recommended) on your MicroSD Card.\
+B. Set up Raspbian\
+Plug the MicroSD Card in the Raspberry Pi 4 and turn it on.\
+If you have a monitor, a mouse and a keyboard: Connect them to the Raspberry Pi and configure the OS with the instructions displayed on the screen.\
 Else: Configure the OS with [this guide](https://hackernoon.com/raspberry-pi-headless-install-462ccabd75d0) from step 3.   
 
-### 2. Install checkra1n
+### 2. Install piRa1n
+Run the following commands in the ![terminal application](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+
 Go in pi directory: `cd /home/pi`
 Clone the repository: `git clone https://github.com/raspberryenvoie/piRa1n.git`\
 Go in the directory: `cd piRa1n`\

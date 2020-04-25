@@ -22,15 +22,11 @@ Connect the Raspberry Pi 4 to a powerbank. After that, plug you iDevice to the P
 A. Download the [Raspberry Imager](https://www.raspberrypi.org/downloads/) software and install Raspbian "A port of Debian with the Raspberry Pi Desktop (Recommended) on your MicroSD Card.\
 B. Set up Raspbian\
 If you have a monitor, a mouse and a keyboard: Plug the MicroSD Card in the Raspberry Pi 4 and turn it on. Connect them to the Raspberry Pi and configure the OS with the instructions displayed on the screen.\
-Else: Configure the OS with [this guide](https://hackernoon.com/raspberry-pi-headless-install-462ccabd75d0) from step 3.   
+Else: Configure the OS with [this guide](https://www.jamesfmackenzie.com/2017/01/02/raspberry-pi-headless-rasbian-install/) from step 3.   
 
 ### 2. Install piRa1n
-Copy and paste each of the following commands into the terminal application and press the Enter key.\
-Go in pi directory: `cd /home/pi`
-Clone the repository: `git clone https://github.com/raspberryenvoie/piRa1n.git`\
-Go in the directory: `cd piRa1n`\
-Make installer executable: `sudo chmod +x install_piRa1n.sh`\
-Execute the installer: `./install_piRa1n.sh`
+Copy and paste the following commands into the terminal application and press the Enter key.\
+`cd /home/pi && git clone https://github.com/raspberryenvoie/piRa1n.git && sudo chmod +x install_piRa1n.sh && ./install_piRa1n.sh`
 
 ### 3. Run piRa1n at Startup
 Go in the directory: `cd /home/pi/piRa1n`\

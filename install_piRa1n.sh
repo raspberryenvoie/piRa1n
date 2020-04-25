@@ -4,7 +4,7 @@ wget https://assets.checkra.in/downloads/linux/cli/arm/1ed46fb34c72ee942a1af185f
 sudo chmod +x /home/pi/piRa1n/piRa1n #Make script executable
 sudo chmod +x /home/pi/piRa1n/piRa1n.sh #Make script executable
 #The following commands will enable piRa1n at startup
-echo' [Unit]
+sudo sh echo' [Unit]
  Description=Checkra1n
  After=multi-user.target
 
@@ -14,7 +14,7 @@ echo' [Unit]
  ExecStart=sudo /home/pi/piRa1n/piRa1n.sh
 
  [Install]
- WantedBy=multi-user.target' > /lib/systemd/system/piRa1n.service | sudo bash
+ WantedBy=multi-user.target' > /lib/systemd/system/piRa1n.service
 sudo chmod 644 /lib/systemd/system/piRa1n.service
 sudo systemctl daemon-reload
 sudo systemctl enable piRa1n.service

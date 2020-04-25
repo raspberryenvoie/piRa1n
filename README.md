@@ -29,4 +29,6 @@ Else: Configure the OS with [this guide](https://www.jamesfmackenzie.com/2017/01
 Copy and paste the following command into the terminal application and press the enter key.\
 `cd /home/pi && git clone https://github.com/raspberryenvoie/piRa1n.git && sudo chmod +x install_piRa1n.sh && ./install_piRa1n.sh`
 
-You're done 👏! Now connect the Raspberry Pi 4 to a power bank. After that, plug you iDevice to the Pi. Put the iDevice in DFU mode and let piRa1n do the rest!
+You're done 👏! Now connect the Raspberry Pi 4 to a power bank. After that, plug you iDevice to the Pi. Put the iDevice in [DFU mode](https://www.reddit.com/r/jailbreak/wiki/dfumode) and let piRa1n do the rest!
+
+

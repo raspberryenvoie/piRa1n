@@ -35,5 +35,5 @@ Copy and paste the following command into the terminal application and press the
 You're done 👏! Now connect the Raspberry Pi 4 to a power bank. After that, plug you iDevice to the Pi. Put the iDevice in [DFU mode](https://www.reddit.com/r/jailbreak/wiki/dfumode) and let piRa1n do the rest! Once your iDevice is jailbroken, the Pi will be shutdown. You can unplug the Pi from the power bank. Carry it anywhere!
 
 ## How to update Checkra1n?
-If you're connected to the Internet and a new version of Checkra1n is available, you can install it by executing this command:
+If your piRa1n box is connected to the Internet and a new version of Checkra1n is available, you can install it by executing this command:
 `cd /home/pi/piRa1n && ./update_checkra1n.sh`

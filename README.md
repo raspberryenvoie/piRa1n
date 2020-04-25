@@ -13,8 +13,8 @@ Connect the Raspberry Pi 4 to a powerbank. After that, plug you iDevice to the P
 
 ## Parts list
 - a Raspberry Pi 4 with either 2GB, 4GB of RAM (2GB of RAM is enough and cheaper so I recommend the 2GB version).
-- a USB to USB Type-C cable.\
-- a USB to lightning cable.\
+- a USB to USB Type-C cable
+- a USB to lightning cable
 - a powerbank
 - a MicroSD Card of at least 8GB
 

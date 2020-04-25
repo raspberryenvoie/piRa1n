@@ -36,4 +36,4 @@ You're done 👏! Now connect the Raspberry Pi 4 to a power bank. After that, pl
 
 ## How to update Checkra1n?
 If you're connected to the Internet and a new version of Checkra1n is available, you can update it by executing this command:
-`cd /home/pi/piRa1n && update_checkra1n.sh`
+`./home/pi/piRa1n/update_checkra1n.sh`

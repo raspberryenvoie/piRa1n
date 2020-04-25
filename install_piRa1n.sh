@@ -1,5 +1,8 @@
 #!/bin/sh
 echo 'Installing piRa1n...make sure you have a working internet connection.'
+sudo apt update
+sudo apt upgrade -y
+sudo apt install usbmuxd -y
 wget https://assets.checkra.in/downloads/linux/cli/arm/1ed46fb34c72ee942a1af185fd5347b999f4bba667d594dd56554e3b3d3ea417/checkra1n-armel -O /home/pi/piRa1n/piRa1n #Download Checkra1n
 sudo chmod +x /home/pi/piRa1n/piRa1n #Make script executable
 sudo chmod +x /home/pi/piRa1n/piRa1n.sh #Make script executable

@@ -38,3 +38,6 @@ You want to jailbreak? Connect the Raspberry Pi 4 to a power bank. After that, p
 ## How to update Checkra1n?
 If your piRa1n box is connected to the Internet and a new version of Checkra1n is available, you can install it by executing this command:
 `cd /home/pi/piRa1n && ./update_checkra1n.sh`
+
+## You don't want the Pi to shutdown after every Jailbreak?
+piRa1n will be automatically restart after every Jailbreak and won't shutdown. Run this command: `mv piRa1n_no_automatic_shutdown.sh piRa1n.sh`

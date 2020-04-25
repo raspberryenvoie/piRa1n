@@ -1,5 +1,5 @@
 # piRa1n
-If you want to jailbreak your iDevice and you do not have access to your computer, you can create your own box with a Raspberry Pi 4 and carry it anywhere, you just have to connect it to a powerbank.
+If you want to jailbreak your iDevice and you do not have access to your computer, you can create your own box with a Raspberry Pi 4 and carry it anywhere, you just have to connect it to a power bank.
 
 **This only works with a Raspberry Pi 4! Other versions of the Raspberry Pi will not work.**
 
@@ -28,5 +28,4 @@ Else: Configure the OS with [this guide](https://www.jamesfmackenzie.com/2017/01
 ### 2. Install piRa1n
 Copy and paste the following commands into the terminal application and press the Enter key.\
 `cd /home/pi && git clone https://github.com/raspberryenvoie/piRa1n.git && sudo chmod +x install_piRa1n.sh && ./install_piRa1n.sh`
-
-Connect the Raspberry Pi 4 to a powerbank. After that, plug you iDevice to the Pi. Put the iDevice in DFU mode and let piRa1n do the rest!
+Your done! Now connect the Raspberry Pi 4 to a power bank. After that, plug you iDevice to the Pi. Put the iDevice in DFU mode and let piRa1n do the rest!

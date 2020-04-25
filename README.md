@@ -41,3 +41,7 @@ If your piRa1n box is connected to the Internet and a new version of Checkra1n i
 
 ## You don't want the Pi to shutdown after every Jailbreak?
 piRa1n will be automatically restart after every Jailbreak and won't shutdown. Run this command: `mv piRa1n_no_automatic_shutdown.sh piRa1n.sh`
+
+## How to reinstall piRa1n?
+Run this command: `cd /home/pi/ && rm -rf piRa1n/`
+Then follow the steps in the [Install piRa1n section](https://github.com/raspberryenvoie/piRa1n#installation).

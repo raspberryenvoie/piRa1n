@@ -32,7 +32,7 @@ Else: Configure the OS with [this guide](https://www.jamesfmackenzie.com/2017/01
 Copy and paste the following command into the terminal application and press the enter key.\
 `cd /home/pi && git clone https://github.com/raspberryenvoie/piRa1n.git && cd piRa1n && sudo chmod +x install_piRa1n.sh && ./install_piRa1n.sh`
 
-You're done 👏! 
+You're done 👏!\
 You want to jailbreak? Connect the Raspberry Pi 4 to a power bank. After that, plug you iDevice to the Pi. Put the iDevice in [DFU mode](https://www.reddit.com/r/jailbreak/wiki/dfumode) and let piRa1n do the rest! Once your iDevice is jailbroken, the Pi will be shutdown. You can unplug the Pi from the power bank. Carry it anywhere!
 
 ## How to update Checkra1n?

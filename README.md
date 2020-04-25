@@ -15,7 +15,7 @@ If you have a monitor, a mouse and a keyboard: Connect them to the Raspberry Pi 
 Else: Configure the OS with [this guide](https://hackernoon.com/raspberry-pi-headless-install-462ccabd75d0) from step 3.   
 
 ### 2. Install piRa1n
-Run the following commands in the ![terminal application](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+Run the following commands in the terminal application ![terminal application](https://www.raspberrypi.org/documentation/usage/terminal/images/terminal.png).
 
 Go in pi directory: `cd /home/pi`
 Clone the repository: `git clone https://github.com/raspberryenvoie/piRa1n.git`\

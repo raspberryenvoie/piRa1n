@@ -3,7 +3,7 @@ If you want to jailbreak your iDevice and you do not have access to your compute
 [Demo of piRa1n](https://youtu.be/lqGb8SG-VII)
 ![piRa1n](https://github.com/raspberryenvoie/piRa1n/blob/master/piRa1n.jpg)
 
-**This only works with a Raspberry Pi 4! Other versions of the Raspberry Pi will not work. It may work with Banana pi M2 Zero.**
+**This only works with a Raspberry Pi 4! Other versions of the Raspberry Pi will not work. It also works with the Banana pi M2 Zero (tested by [u/gilshahar7 on Reddit](https://www.reddit.com/user/gilshahar7/).**
 
 ## ⚠️ Disclaimer
 If you use piRa1n please note that I am in no way responsible for any damage to your devices.
@@ -47,9 +47,18 @@ piRa1n will automatically restart after every Jailbreak and won't shutdown the P
 
 If you want to restore the default behavior (automatically shutdown Pi after every Jailbreak): `cd /home/pi/piRa1n && ./piRa1n_automatic_shutdown.sh`.
 
-## Having issues? Try to reinstall piRa1n
+## Uninstall piRa1n
+Execute this command: `cd /home/pi/piRa1n && ./uninstall_piRa1n.sh`
+
+## Debug:
+### Having issues? Try to reinstall piRa1n
 Run this command: `cd /home/pi/ && rm -rf piRa1n/`\
 Then run the command in the [Install piRa1n section](https://github.com/raspberryenvoie/piRa1n#2-install-pira1n).
 
-## Uninstall piRa1n
-Execute this command: `cd /home/pi/piRa1n && ./uninstall_piRa1n.sh`
+### Having issues while using piRa1n on a Banana pi M2 Zero
+Try to run this command: `sudo systemctl stop hciuart && sudo systemctl disable hciuart`
+Note this command will disable the Bluetooth on your Banana pi M2 Zero.
+
+### Check this post on reddit, someone maybe has the same issue as you
+
+### Open an Issue [here](https://github.com/raspberryenvoie/piRa1n/issues/new)

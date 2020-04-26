@@ -3,7 +3,7 @@ If you want to jailbreak your iDevice and you do not have access to your compute
 [Demo of piRa1n](https://youtu.be/lqGb8SG-VII)
 ![piRa1n](https://github.com/raspberryenvoie/piRa1n/blob/master/piRa1n.jpg)
 
-**This only works with a Raspberry Pi 4! Other versions of the Raspberry Pi will not work. It also works with the Banana pi M2 Zero.**
+**This only works with a Raspberry Pi 4! Other versions of the Raspberry Pi will not work. It also works with the Banana pi M2 Zero thanks to [u/gilshahar7](https://www.reddit.com/user/gilshahar7/).**
 
 ## ⚠️ Disclaimer
 If you use piRa1n please note that I am in no way responsible for any damage to your devices.

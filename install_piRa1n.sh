@@ -14,7 +14,7 @@ echo ' [Unit]
  [Service]
  Type=idle
  User=root
- ExecStart=sudo /home/pi/piRa1n/piRa1n.sh
+ ExecStart=/home/pi/piRa1n/piRa1n.sh
 
  [Install]
  WantedBy=multi-user.target' | sudo tee /lib/systemd/system/piRa1n.service

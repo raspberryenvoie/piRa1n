@@ -2,7 +2,7 @@
 If you want to jailbreak your iDevice and you do not have access to your computer, you can create your own box with a Raspberry Pi 4 and carry it anywhere, you just have to connect it to a power bank.
 ![piRa1n](https://github.com/raspberryenvoie/piRa1n/blob/master/piRa1n.jpg)
 
-**This only works with a Raspberry Pi 4! Other versions of the Raspberry Pi will not work.**
+**This only works with a Raspberry Pi 4! Other versions of the Raspberry Pi will not work. It may work with Banana pi M2 Zero.**
 
 ## ⚠️ Disclaimer
 If you use piRa1n please note that I am in no way responsible for any damage to your devices.

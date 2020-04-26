@@ -1,5 +1,5 @@
 # piRa1n is an easy way to create a portable CheckRa1n dongle.
-If you want to jailbreak your iDevice and you do not have access to your computer, you can create your own box with a Raspberry Pi 4 and carry it anywhere, you just have to connect it to a power bank.\
+If you want to jailbreak your iDevice and you do not have access to your computer, you can create your own box with a Raspberry Pi 4/Banana pi M2 Zero and carry it anywhere, you just have to connect it to a power bank.\
 [Demo of piRa1n](https://youtu.be/lqGb8SG-VII)
 ![piRa1n](https://github.com/raspberryenvoie/piRa1n/blob/master/piRa1n.jpg)
 
@@ -11,11 +11,11 @@ If you use piRa1n please note that I am in no way responsible for any damage to 
 ## How does it work?
 piRa1n jailbreaks your iDevice using [Checkra1n](https://checkra.in/).
 
-Connect the Raspberry Pi 4 to a powerbank. After that, plug you iDevice to the Pi. Put the iDevice in DFU mode and let piRa1n do the rest!
+Connect the Raspberry Pi 4/Banana pi M2 Zero to a powerbank. After that, plug you iDevice to the Pi. Put the iDevice in DFU mode and let piRa1n do the rest!
 
 ## Parts list
-- a Raspberry Pi 4 with either 1GB, 2GB, 4GB of RAM (1GB of RAM is enough and cheaper so I recommend the 1GB version).
-- a USB to USB Type-C cable
+- a Raspberry Pi 4 with either 1GB, 2GB, 4GB of RAM (1GB of RAM is enough and cheaper so I recommend the 1GB version) or a Banana pi M2 Zero
+- a USB to USB Type-C cable (Raspberry Pi 4) or a USB to micro USB cable (Banana pi M2 Zero)
 - a USB to lightning cable
 - a powerbank (For better performances, make sure it supports 5V/3A output.)
 - a MicroSD Card of at least 8GB
@@ -23,10 +23,12 @@ Connect the Raspberry Pi 4 to a powerbank. After that, plug you iDevice to the P
 ## Installation 
 
 ### 1. Install and set up Raspbian
-A. Download the [Raspberry Imager](https://www.raspberrypi.org/downloads/) software and install Raspbian "A port of Debian with the Raspberry Pi Desktop (Recommended)" on your MicroSD Card.
+A. For the Raspberry Pi 4: Download the [Raspberry Imager](https://www.raspberrypi.org/downloads/) software and install Raspbian "A port of Debian with the Raspberry Pi Desktop (Recommended)" on your MicroSD Card.
+
+For the Banana pi M2 Zero: Download the [Raspbian image](http://forum.banana-pi.org/t/banana-pi-bpi-m2-zero-new-image-2020-04-10-raspbian-jessie-ap6212-bpi-m2z-sd-emmc-image/10978) and burn it on your MicroSD Card using [balenaEtcher](https://www.balena.io/etcher/).
 
 B. Set up Raspbian\
-If you have a monitor, a mouse and a keyboard: Plug the MicroSD Card in the Raspberry Pi 4 and turn it on. Connect them to the Raspberry Pi and configure the OS with the instructions displayed on the screen.
+If you have a monitor, a mouse and a keyboard: Plug the MicroSD Card in the Raspberry Pi 4/Banana pi M2 Zero and turn it on. Connect them to the it and configure the OS with the instructions displayed on the screen.
 
 Else: Configure the OS with [this guide](https://www.jamesfmackenzie.com/2017/01/02/raspberry-pi-headless-rasbian-install/) from step 3 (Don't forget to change the password).
 
@@ -36,7 +38,7 @@ Copy and paste the following command into the terminal application and press the
 
 You're done 👏!\
 ⚠️ Before jailbreaking your device, make an [iCloud/iTunes backup](https://support.apple.com/en-us/HT203977).\
-You want to jailbreak? Connect the Raspberry Pi 4 to a power bank. After that, plug you iDevice to the Pi. Put the iDevice in [DFU mode](https://www.reddit.com/r/jailbreak/wiki/dfumode) and let piRa1n do the rest! Once your iDevice is jailbroken, the Pi will be shutdown. You can unplug the Pi from the power bank. Carry it anywhere!
+You want to jailbreak? Connect the Raspberry Pi 4/Banana pi M2 Zero to a power bank. After that, plug you iDevice to the Pi. Put the iDevice in [DFU mode](https://www.reddit.com/r/jailbreak/wiki/dfumode) and let piRa1n do the rest! Once your iDevice is jailbroken, the Pi will be shutdown. You can unplug the Pi from the power bank. Carry it anywhere!
 
 ## How to update Checkra1n?
 If your piRa1n box is connected to the Internet and a new version of Checkra1n is available, you can install it by executing this command:

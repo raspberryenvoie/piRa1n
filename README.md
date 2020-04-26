@@ -56,7 +56,7 @@ Run this command: `cd /home/pi/ && rm -rf piRa1n/`\
 Then run the command in the [Install piRa1n section](https://github.com/raspberryenvoie/piRa1n#2-install-pira1n).
 
 ### Having issues while using piRa1n on a Banana pi M2 Zero
-Try to run this command: `sudo systemctl stop hciuart && sudo systemctl disable hciuart`
+Try to run this command: `sudo systemctl stop hciuart && sudo systemctl disable hciuart`\
 Note this command will disable the Bluetooth on your Banana pi M2 Zero.
 
 ### Check this post on reddit, someone maybe has the same issue as you

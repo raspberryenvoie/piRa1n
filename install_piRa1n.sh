@@ -12,7 +12,6 @@ echo ' [Unit]
  After=multi-user.target
 
  [Service]
- Type=idle
  ExecStart=/home/pi/piRa1n/piRa1n.sh
 
  [Install]

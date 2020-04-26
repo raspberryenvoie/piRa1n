@@ -13,7 +13,6 @@ echo ' [Unit]
 
  [Service]
  Type=idle
- User=root
  ExecStart=/home/pi/piRa1n/piRa1n.sh
 
  [Install]

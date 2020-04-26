@@ -59,6 +59,6 @@ Then run the command in the [Install piRa1n section](https://github.com/raspberr
 Try to run this command: `sudo systemctl stop hciuart && sudo systemctl disable hciuart`\
 Note this command will disable the Bluetooth on your Banana pi M2 Zero.
 
-### Check this post on reddit, someone maybe has the same issue as you
+### Check [this post on reddit](https://www.reddit.com/r/jailbreak/comments/g7sj3d/release_pira1n_easily_turn_a_raspberry_pi_into_a/), someone maybe has the same issue as you
 
 ### Open an Issue [here](https://github.com/raspberryenvoie/piRa1n/issues/new)

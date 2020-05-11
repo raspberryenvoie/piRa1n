@@ -47,7 +47,7 @@ If your piRa1n box is connected to the Internet and a new version of Checkra1n i
 ## Don't want the Pi to shutdown after each Jailbreak?
 piRa1n will automatically restart after each Jailbreak and won't shutdown the Pi. Run this command: `cd /home/pi/piRa1n && ./piRa1n_no_automatic_shutdown.sh`.
 
-If you want to restore the default behavior (automatically shutdown Pi after each Jailbreak): `cd /home/pi/piRa1n && ./piRa1n_automatic_shutdown.sh`.
+If you want to restore the default behavior (automatically shutdown the Pi after each Jailbreak): `cd /home/pi/piRa1n && ./piRa1n_automatic_shutdown.sh`.
 
 ## Uninstall piRa1n
 Execute this command: `cd /home/pi/piRa1n && ./uninstall_piRa1n.sh`
@@ -59,7 +59,7 @@ Now jailbreak your Device and that's it!
 If you don't want to boot in safe mode anymore:\
 piRa1n will automatically restart after each Jailbreak and won't shutdown the Pi. Run this command: `cd /home/pi/piRa1n && ./piRa1n_no_automatic_shutdown.sh`.\
 or\
-If you want to restore the default behavior (automatically shutdown Pi after each Jailbreak): `cd /home/pi/piRa1n && ./piRa1n_automatic_shutdown.sh`.
+If you want to restore the default behavior (automatically shutdown the Pi after each Jailbreak): `cd /home/pi/piRa1n && ./piRa1n_automatic_shutdown.sh`.
 
 ## Debug:
 ### Having issues? Try to reinstall piRa1n

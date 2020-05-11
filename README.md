@@ -44,7 +44,7 @@ You want to jailbreak? Connect the Raspberry Pi 4/Banana pi M2 Zero to a power b
 If your piRa1n box is connected to the Internet and a new version of Checkra1n is available, you can install it by executing this command:
 `cd /home/pi/piRa1n && ./update_checkra1n.sh`
 
-## You don't want the Pi to shutdown after every Jailbreak?
+## Don't want the Pi to shutdown after each Jailbreak?
 piRa1n will automatically restart after every Jailbreak and won't shutdown the Pi. Run this command: `cd /home/pi/piRa1n && ./piRa1n_no_automatic_shutdown.sh`.
 
 If you want to restore the default behavior (automatically shutdown Pi after every Jailbreak): `cd /home/pi/piRa1n && ./piRa1n_automatic_shutdown.sh`.
@@ -61,6 +61,6 @@ Then run the command in the [Install piRa1n section](https://github.com/raspberr
 Try to run this command: `sudo systemctl stop hciuart && sudo systemctl disable hciuart`\
 Note this command will disable the Bluetooth on your Banana pi M2 Zero.
 
-### Check [this post on reddit](https://www.reddit.com/r/jailbreak/comments/g7sj3d/release_pira1n_easily_turn_a_raspberry_pi_into_a/), someone maybe has the same issue as you
+### Check [this post on reddit](https://www.reddit.com/r/jailbreak/comments/g7sj3d/release_pira1n_easily_turn_a_raspberry_pi_into_a/), someone may have the same issue as you
 
 ### Open an Issue [here](https://github.com/raspberryenvoie/piRa1n/issues/new)

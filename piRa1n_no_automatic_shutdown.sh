@@ -1,4 +1,4 @@
-##!/bin/sh
+#!/bin/sh
 echo 'piRa1n will be automatically restart after every Jailbreak and will not shutdown the Pi'
 sudo service piRa1n stop
 echo '#!/bin/sh

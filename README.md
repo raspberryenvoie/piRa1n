@@ -52,6 +52,15 @@ If you want to restore the default behavior (automatically shutdown Pi after eve
 ## Uninstall piRa1n
 Execute this command: `cd /home/pi/piRa1n && ./uninstall_piRa1n.sh`
 
+## Boot in safe mode
+Type in the terminal (Your Pi will shutdown after booting your iDevice in safe mode.): `cd /home/pi/piRa1n && ./piRa1n_safe_mode.sh`\
+Now jailbreak your Device and that's it!
+
+If you don't want to boot in safe mode anymore:
+piRa1n will automatically restart after every Jailbreak and won't shutdown the Pi. Run this command: `cd /home/pi/piRa1n && ./piRa1n_no_automatic_shutdown.sh`.\
+or\
+If you want to restore the default behavior (automatically shutdown Pi after every Jailbreak): `cd /home/pi/piRa1n && ./piRa1n_automatic_shutdown.sh`.
+
 ## Debug:
 ### Having issues? Try to reinstall piRa1n
 Run this command: `cd /home/pi/ && rm -rf piRa1n/`\

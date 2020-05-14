@@ -63,7 +63,7 @@ If you want to restore the default behavior (automatically shutdown the Pi after
 
 ## Debug:
 ### Having issues? Try to reinstall piRa1n
-Run this command: `cd $HOME/ && rm -rf piRa1n/`\
+Run this command: `rm -rf $HOME/piRa1n/`\
 Then run the command in the [Install piRa1n section](https://github.com/raspberryenvoie/piRa1n#2-install-pira1n).
 
 ### Having issues while using piRa1n on a Banana pi M2 Zero

@@ -7,15 +7,15 @@ wget https://assets.checkra.in/downloads/linux/cli/arm/1ed46fb34c72ee942a1af185f
 cd $HOME/piRa1n/
 sudo chmod +x piRa1n piRa1n.sh update_checkra1n.sh uninstall_piRa1n.sh piRa1n_no_automatic_shutdown.sh piRa1n_automatic_shutdown.sh piRa1n_safe_mode.sh #Make scripts executable
 #The following commands will enable piRa1n at startup
-echo ' [Unit]
+echo " [Unit]
  Description=Checkra1n
  After=multi-user.target
 
  [Service]
- ExecStart=/home/pi/piRa1n/piRa1n.sh
+ ExecStart=$HOME/piRa1n/piRa1n.sh
 
  [Install]
- WantedBy=multi-user.target' | sudo tee /lib/systemd/system/piRa1n.service
+ WantedBy=multi-user.target" | sudo tee /lib/systemd/system/piRa1n.service
 sudo chmod 644 /lib/systemd/system/piRa1n.service
 sudo systemctl daemon-reload
 sudo systemctl enable piRa1n.service

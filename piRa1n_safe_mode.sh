@@ -5,4 +5,4 @@ echo "#!/bin/sh
 sudo $HOME/piRa1n/piRa1n -c -V -E -s
 sudo /sbin/shutdown now" > piRa1n.sh
 sudo service piRa1n start
-echo 'Done!'
+echo 'Changes were successfully applied!'

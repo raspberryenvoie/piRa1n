@@ -6,7 +6,7 @@ sudo apt install usbmuxd -y
 wget https://assets.checkra.in/downloads/linux/cli/arm/1ed46fb34c72ee942a1af185fd5347b999f4bba667d594dd56554e3b3d3ea417/checkra1n-armel -O /home/pi/piRa1n/piRa1n #Download Checkra1n
 cd $HOME/piRa1n/
 echo "#!/bin/sh
-sudo $HOME/piRa1n/piRa1n -c -V -E
+sudo $HOME/piRa1n/piRa1n -c -E
 sudo /sbin/shutdown now" > piRa1n.sh
 sudo chmod +x piRa1n piRa1n.sh update_checkra1n.sh uninstall_piRa1n.sh piRa1n_no_automatic_shutdown.sh piRa1n_automatic_shutdown.sh piRa1n_safe_mode.sh #Make scripts executable
 #The following commands will enable piRa1n at startup

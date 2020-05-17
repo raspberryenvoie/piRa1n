@@ -8,6 +8,7 @@ case $input in
     sudo rm -rf /lib/systemd/system/piRa1n.service
     sudo systemctl daemon-reload
     rm -rf $HOME/piRa1n/ 
+    cd $HOME/
     echo 'piRa1n has been removed.' ;;
     [nN][oO]|[nN])
  echo "piRa1n won't be removed."

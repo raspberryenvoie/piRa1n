@@ -9,7 +9,7 @@ cd $HOME/piRa1n/
 echo "#!/bin/sh
 sudo $HOME/piRa1n/piRa1n -c -E
 sudo /sbin/shutdown now" > piRa1n.sh
-sudo chmod +x piRa1n piRa1n.sh #Make scripts executable
+chmod +x piRa1n piRa1n.sh #Make scripts executable
 #The following commands will enable piRa1n at startup
 echo " [Unit]
  Description=Checkra1n

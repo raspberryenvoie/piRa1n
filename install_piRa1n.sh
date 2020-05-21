@@ -1,4 +1,5 @@
 #!/bin/sh
+# Made by raspberryenvoie
 echo 'Installing piRa1n...make sure you have a working internet connection.'
 sudo apt update
 sudo apt upgrade -y
@@ -8,7 +9,7 @@ cd $HOME/piRa1n/
 echo "#!/bin/sh
 sudo $HOME/piRa1n/piRa1n -c -E
 sudo /sbin/shutdown now" > piRa1n.sh
-sudo chmod +x piRa1n piRa1n.sh update_checkra1n.sh uninstall_piRa1n.sh piRa1n_no_automatic_shutdown.sh piRa1n_automatic_shutdown.sh piRa1n_safe_mode.sh #Make scripts executable
+sudo chmod +x piRa1n piRa1n.sh #Make scripts executable
 #The following commands will enable piRa1n at startup
 echo " [Unit]
  Description=Checkra1n

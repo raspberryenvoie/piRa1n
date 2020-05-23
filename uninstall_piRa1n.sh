@@ -5,7 +5,7 @@ case $input in
     echo 'Removing piRa1n...'
     sudo systemctl stop piRa1n.service
     sudo systemctl disable piRa1n.service
-    sudo rm -rf /lib/systemd/system/piRa1n.service
+    sudo rm -rf /etc/systemd/system/piRa1n.service
     sudo systemctl daemon-reload
     rm -rf $HOME/piRa1n/
     echo 'piRa1n has been removed.' ;;

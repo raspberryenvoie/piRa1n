@@ -19,8 +19,8 @@ echo " [Unit]
  ExecStart=$HOME/piRa1n/piRa1n.sh
 
  [Install]
- WantedBy=multi-user.target" | sudo tee /lib/systemd/system/piRa1n.service
-sudo chmod 644 /lib/systemd/system/piRa1n.service
+ WantedBy=multi-user.target" | sudo tee /etc/systemd/system/piRa1n.service
+sudo chmod 644 /etc/systemd/system/piRa1n.service
 sudo systemctl daemon-reload
 sudo systemctl enable piRa1n.service
 echo 'Done! Raspbian will now reboot.\nTo jailbreak your iDevice, put it in DFU mode and plug it to the Pi.\nEnjoy!'

@@ -4,7 +4,7 @@ echo 'Installing piRa1n...make sure you have a working internet connection.'
 sudo apt update
 sudo apt upgrade -y
 sudo apt install usbmuxd -y
-wget https://assets.checkra.in/downloads/linux/cli/arm/1ed46fb34c72ee942a1af185fd5347b999f4bba667d594dd56554e3b3d3ea417/checkra1n-armel -O $HOME/piRa1n/piRa1n #Download Checkra1n
+wget https://assets.checkra.in/downloads/linux/cli/arm/1ed46fb34c72ee942a1af185fd5347b999f4bba667d594dd56554e3b3d3ea417/checkra1n -O $HOME/piRa1n/piRa1n #Download Checkra1n
 cd $HOME/piRa1n/
 echo "#!/bin/sh
 sudo $HOME/piRa1n/piRa1n -c -E

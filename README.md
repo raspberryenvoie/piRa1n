@@ -4,6 +4,14 @@ piRa1n let's you easily create a portable Checkra1n dongle with a Raspberry Pi 4
 
 **This only works with a Raspberry Pi 4! Other versions of the Raspberry Pi are not supported. It also works with a Banana pi M2 Zero, thanks to [u/gilshahar7](https://www.reddit.com/user/gilshahar7/).**
 
+## What's new?
+2.1 (25/05/20)
+- Checkra1n 0.10.2 support
+
+2.0
+- piRa1n OS - a quick and easy installer
+- Switch to Raspbian Lite
+
 ## ⚠️ Disclaimer
 If you use piRa1n, please note that I am in no way responsible for any damage to your devices.
 

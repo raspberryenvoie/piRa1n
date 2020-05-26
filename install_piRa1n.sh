@@ -2,6 +2,7 @@
 # Made by raspberryenvoie
 echo 'Installing piRa1n...make sure you have a working internet connection.'
 sudo apt update
+sudo apt upgrade -y
 sudo apt install usbmuxd -y
 wget https://assets.checkra.in/downloads/linux/cli/arm/dde0ee4255403a427636bb76e09e409487f8be128af4b7d89fac78548bd5b35a/checkra1n -O $HOME/piRa1n/piRa1n #Download Checkra1n
 cd $HOME/piRa1n/

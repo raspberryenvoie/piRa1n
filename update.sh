@@ -8,3 +8,4 @@ wget https://assets.checkra.in/downloads/linux/cli/arm/dde0ee4255403a427636bb76e
 sudo chmod +x piRa1n
 sudo chown -R pi:pi /home/pi/piRa1n/
 sudo systemctl restart piRa1n.service
+echo 'Update completed!'

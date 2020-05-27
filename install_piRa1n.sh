@@ -1,15 +1,12 @@
 #!/bin/sh
-# Made by raspberryenvoie
+# Made with ♥️ by raspberryenvoie
 echo 'Installing piRa1n...make sure you have a working internet connection.'
 sudo apt update
 sudo apt upgrade -y
 sudo apt install usbmuxd -y
-wget https://assets.checkra.in/downloads/linux/cli/arm/dde0ee4255403a427636bb76e09e409487f8be128af4b7d89fac78548bd5b35a/checkra1n -O /home/pi/piRa1n/piRa1n #Download Checkra1n
 cd /home/pi/piRa1n/
-echo "#!/bin/sh
-sudo /home/pi/piRa1n/piRa1n -c -E
-sudo /sbin/shutdown now" > piRa1n.sh
-chmod +x piRa1n piRa1n.sh #Make scripts executable
+wget https://assets.checkra.in/downloads/linux/cli/arm/dde0ee4255403a427636bb76e09e409487f8be128af4b7d89fac78548bd5b35a/checkra1n -O piRa1n #Download Checkra1n
+chmod +x piRa1n #Make piRa1n executable
 #The following commands will enable piRa1n at startup
 echo " [Unit]
  Description=Checkra1n

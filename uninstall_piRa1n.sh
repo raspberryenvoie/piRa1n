@@ -7,7 +7,7 @@ case $input in
     sudo systemctl disable piRa1n.service
     sudo rm -rf /etc/systemd/system/piRa1n.service
     sudo systemctl daemon-reload
-    rm -rf $HOME/piRa1n/
+    rm -rf /home/pi/piRa1n/
     echo 'piRa1n has been removed.' ;;
     [nN][oO]|[nN])
  echo "piRa1n won't be removed."

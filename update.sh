@@ -11,4 +11,4 @@ sudo chmod +x piRa1n
 sudo chown -R pi:pi /home/pi/piRa1n/
 sudo chmod -R 755 /home/pi/piRa1n/
 sudo systemctl start piRa1n.service
-echo 'Update completed!'
+echo 'Update completed :) You can now shut down your Pi!'

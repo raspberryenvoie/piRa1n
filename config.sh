@@ -24,7 +24,7 @@ while true; do
   read -r -p "Safe mode [Y/n]: " input
   case $input in
       [yY][eE][sS]|[yY])
-      sed -i 's/^\(.*sudo \/home\/pi\/piRa1n\/piRa1n -c -E\).*$/& -s/g' /home/pi/piRa1n.sh
+      sed -i 's/^\(.*sudo \/home\/pi\/piRa1n\/piRa1n -c -E\).*$/& -s/g' /home/pi/piRa1n/piRa1n.sh
       break ;;
       [nN][oO]|[nN])
       break ;;
@@ -36,7 +36,7 @@ while true; do
   read -r -p "Verbose boot [Y/n]: " input
   case $input in
       [yY][eE][sS]|[yY])
-      sed -i 's/^\(.*sudo \/home\/pi\/piRa1n\/piRa1n -c -E\).*$/& -v/g' /home/pi/piRa1n.sh
+      sed -i 's/^\(.*sudo \/home\/pi\/piRa1n\/piRa1n -c -E\).*$/& -v/g' /home/pi/piRa1n/piRa1n.sh
       break ;;
       [nN][oO]|[nN])
       break ;;

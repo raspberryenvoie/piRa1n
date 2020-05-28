@@ -6,7 +6,7 @@ while true; do
       sudo systemctl stop piRa1n.service
       echo "#!/bin/sh
 sudo /home/pi/piRa1n/piRa1n -c -E
-sudo /sbin/shutdown now" > /home/pi/piRa1n.sh
+sudo /sbin/shutdown now" > /home/pi/piRa1n/piRa1n.sh
       break ;;
       [nN][oO]|[nN])
       sudo systemctl stop piRa1n.service
@@ -14,7 +14,7 @@ sudo /sbin/shutdown now" > /home/pi/piRa1n.sh
 while true
 do
   sudo /home/pi/piRa1n/piRa1n -c -E
-done" > /home/pi/piRa1n.sh
+done" > /home/pi/piRa1n/piRa1n.sh
       break ;;
       *)
       echo "Invalid input..." ;;

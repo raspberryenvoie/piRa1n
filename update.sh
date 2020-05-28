@@ -16,4 +16,5 @@ if [ $? -eq 0 ]; then
   echo 'Updates completed :) You can now shut down your Pi!'
 else
     echo 'Cannot download updates, you are offline!'
+    echo 'Cannot download updates, you are offline!' > /home/pi/piRa1n-web/update.out
 fi

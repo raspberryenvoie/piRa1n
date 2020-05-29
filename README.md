@@ -1,5 +1,5 @@
 # piRa1n
-piRa1n let's you easily create a portable Checkra1n dongle with a Raspberry Pi 4/Banana pi M2 Zero.\
+piRa1n let's you easily create a portable Checkra1n dongle with a Raspberry Pi 4 or a Banana pi M2 Zero.\
 [Here](https://youtu.be/lqGb8SG-VII) is a demo of piRa1n.
 
 **This only works with a Raspberry Pi 4! Other versions of the Raspberry Pi are not supported. It also works with a Banana pi M2 Zero, thanks to [u/gilshahar7](https://www.reddit.com/user/gilshahar7/).**

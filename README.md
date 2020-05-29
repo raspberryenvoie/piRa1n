@@ -32,4 +32,4 @@ Check [this page](https://github.com/raspberryenvoie/piRa1n/wiki).
 ## Credits:
 - [pi-gen](https://github.com/RPi-Distro/Pi-gen)
 - [Checkra1n](https://checkra.in)
-- [Raspbian](https://www.raspberrypi.org/downloads/raspbian/)
+- [Raspberry Pi OS](https://www.raspberrypi.org/downloads/raspbian/)

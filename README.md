@@ -9,7 +9,7 @@ piRa1n lets you easily create a portable Checkra1n dongle with a Raspberry Pi 4 
 - piRa1n-web (a web interface to configure and update piRa1n)
 - Create a new config script from scratch
 - Add verbose boot
-- Create script to update piRa1n and Checkra1n
+- Script to update piRa1n and Checkra1n
 
 2.1 (25/05/20)
 - Checkra1n 0.10.2 support

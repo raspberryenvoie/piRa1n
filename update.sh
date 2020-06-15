@@ -15,5 +15,5 @@ if [ $? -eq 0 ]; then
   sudo systemctl start piRa1n.service
   echo 'Updates completed :) You can now shut down your Pi!'
 else
-    echo 'Cannot download updates, you are offline!'
+  echo 'Cannot download updates, you are offline!'
 fi

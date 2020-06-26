@@ -1,6 +1,8 @@
 #!/bin/sh
 wget -q --spider https://google.com
 if [ $? -eq 0 ]; then
+  sudo apt update
+  sudo apt upgrade -y
   sudo systemctl stop piRa1n.service
   sudo mv /home/pi/piRa1n/piRa1n.sh /home/pi/piRa1n.sh.backup
   sudo rm -rf /home/pi/piRa1n/

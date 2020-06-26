@@ -10,6 +10,10 @@ piRa1n lets you easily create a portable Checkra1n dongle with a Raspberry Pi 4 
 piRa1n jailbreaks your iDevice using [Checkra1n](https://checkra.in/).\
 Connect the Raspberry Pi 4/Banana pi M2 Zero to a powerbank. After that, plug you iDevice to the Pi. Put the iDevice in DFU mode and let piRa1n do the rest!
 
+## ⚠️ Disclaimer
+If you use piRa1n, please note that I am in no way responsible for any damage to your devices.
+I recommend to make an [iCloud/iTunes backup](https://support.apple.com/en-us/HT203977) before jailbreaking your device.
+
 ## What's new?
 3.0 (28/05/20)
 - piRa1n-web (a web interface to configure and update piRa1n)

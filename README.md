@@ -26,9 +26,6 @@ piRa1n jailbreaks your iDevice using [Checkra1n](https://checkra.in/).
 
 Connect the Raspberry Pi 4/Banana pi M2 Zero to a powerbank. After that, plug you iDevice to the Pi. Put the iDevice in DFU mode and let piRa1n do the rest!
 
-## Instructions on how to build your piRa1n box
-Check [this page](https://github.com/raspberryenvoie/piRa1n/wiki).
-
 ## Credits:
 - [pi-gen](https://github.com/RPi-Distro/Pi-gen)
 - [Checkra1n](https://checkra.in)

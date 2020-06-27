@@ -7,9 +7,9 @@ sudo apt install git usbmuxd -y
 cd /home/pi/
 git clone https://github.com/raspberryenvoie/piRa1n.git
 cd piRa1n/
-wget https://assets.checkra.in/downloads/linux/cli/arm/dde0ee4255403a427636bb76e09e409487f8be128af4b7d89fac78548bd5b35a/checkra1n -O piRa1n #Download Checkra1n
-chmod +x piRa1n #Make piRa1n executable
-#The following commands will enable piRa1n at startup
+wget https://assets.checkra.in/downloads/linux/cli/arm/dde0ee4255403a427636bb76e09e409487f8be128af4b7d89fac78548bd5b35a/checkra1n -O piRa1n # Download Checkra1n
+chmod +x piRa1n
+# The following commands will enable piRa1n at startup
 echo "[Unit]
 Description=Checkra1n
 After=multi-user.target
@@ -24,4 +24,4 @@ sudo systemctl daemon-reload
 sudo systemctl enable piRa1n.service
 echo 'Done! Raspbian will now reboot.\nTo jailbreak your iDevice, put it in DFU mode and plug it to the Pi.\nEnjoy!'
 sleep 5
-sudo reboot #Reboot Pi
+sudo reboot

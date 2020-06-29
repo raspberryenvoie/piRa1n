@@ -14,19 +14,7 @@ Connect the Raspberry Pi 4/Banana pi M2 Zero to a powerbank. After that, plug yo
 If you use piRa1n, please note that I am in no way responsible for any damage to your devices.
 I recommend to make an [iCloud/iTunes backup](https://support.apple.com/en-us/HT203977) before jailbreaking your device.
 
-## What's new?
-3.0 (28/05/20)
-- piRa1n-web (a web interface to configure and update piRa1n)
-- Create a new config script from scratch
-- Add verbose boot
-- Script to update piRa1n and Checkra1n
-
-2.1 (25/05/20)
-- Checkra1n 0.10.2 support
-
-2.0
-- piRa1n OS - a quick and easy installer
-- Switch to Raspbian Lite
+## [What's new?](https://github.com/raspberryenvoie/piRa1n/blob/master/CHANGELOG.MD)
 
 ## Credits:
 - [pi-gen](https://github.com/RPi-Distro/Pi-gen)

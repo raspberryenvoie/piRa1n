@@ -7,7 +7,7 @@
 
 ### Changed
 - Config script
-- Script to update piRa1n and Checkra1n
+- piRa1n and Checkra1n update script
 
 ## 2.1 - 2020-05-25
 ### Added

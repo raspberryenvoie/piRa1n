@@ -10,10 +10,9 @@ case $input in
     rm -rf /home/pi/piRa1n/
     echo 'piRa1n has been removed.' ;;
     [nN][oO]|[nN])
- echo "piRa1n won't be removed."
+    echo "piRa1n won't be removed."
        ;;
     *)
- echo "Invalid input..."
- exit 1
- ;;
+    echo "Invalid input..."
+    exit 1 ;;
 esac

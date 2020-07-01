@@ -2,7 +2,7 @@
 
 ## 3.0 - 2020-05-28
 ### Added
-- piRa1n-web (a web interface to configure and update piRa1n)
+- [piRa1n-web](https://github.com/raspberryenvoie/piRa1n-web) (a web interface to configure and update piRa1n)
 - Verbose boot
 
 ### Changed
@@ -15,6 +15,6 @@
 
 ## 2.0
 ### Added
-- piRa1n OS - a quick and easy installer
+- [piRa1n OS](https://github.com/raspberryenvoie/piRa1n-OS) - a quick and easy installer
 ### Changed
 - Switch to Raspbian Lite

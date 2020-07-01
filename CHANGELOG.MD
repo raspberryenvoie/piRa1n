@@ -13,8 +13,8 @@
 ### Added
 - Checkra1n 0.10.2 support
 
-### 2.0
-## Added
+## 2.0
+### Added
 - piRa1n OS - a quick and easy installer
-## Changed
+### Changed
 - Switch to Raspbian Lite

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 wget -q --spider https://google.com
 if [ $? -eq 0 ]; then
   if [ -f /home/pi/piRa1n-web/look_for_updates.sh ]; then

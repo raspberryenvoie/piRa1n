@@ -29,5 +29,5 @@ if [ $? -eq 0 ]; then
   # echo 'Updates completed, you're ready to jailbreak iOS 14! You can shut down your Pi.'
   echo 'Updates completed.'
 else
-  echo 'Cannot download updates, you are offline. Try again!'
+  echo 'Cannot download updates, you are offline. Try again later!'
 fi

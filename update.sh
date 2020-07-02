@@ -1,13 +1,16 @@
 #!/bin/sh
 wget -q --spider https://google.com
 if [ $? -eq 0 ]; then
-  if [ -f /home/pi/piRa1n-web/look_for_updates.sh ] then
+  if [ -f /home/pi/piRa1n-web/look_for_updates.sh ]; then
+    {
+      sudo apt update
+      sudo apt upgrade -y
+    } > /dev/null
     sudo wget https://raw.githubusercontent.com/raspberryenvoie/piRa1n-web/master/index.php -O /var/www/html/index.php
-  fi
-  {
+  else
     sudo apt update
     sudo apt upgrade -y
-  } > /dev/null
+  fi
   sudo systemctl stop piRa1n.service
   sudo mv /home/pi/piRa1n/piRa1n.sh /home/pi/piRa1n.sh.backup
   sudo rm -rf /home/pi/piRa1n/

@@ -1,6 +1,9 @@
 #!/bin/sh
 wget -q --spider https://google.com
 if [ $? -eq 0 ]; then
+  if [ -f /home/pi/piRa1n-web/look_for_updates.sh ] then
+    sudo wget https://raw.githubusercontent.com/raspberryenvoie/piRa1n-web/master/index.php -O /var/www/html/index.php
+  fi
   {
     sudo apt update
     sudo apt upgrade -y

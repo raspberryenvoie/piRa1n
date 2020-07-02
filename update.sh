@@ -1,6 +1,7 @@
 #!/bin/sh
 wget -q --spider https://google.com
 if [ $? -eq 0 ]; then
+  echo 'In the meantime, look <a href="https://github.com/raspberryenvoie/piRa1n/blob/master/CHANGELOG.MD">what's new</a>. TL;DR:'
   if [ -f /home/pi/piRa1n-web/look_for_updates.sh ]; then
     {
       sudo apt-get update
@@ -24,7 +25,7 @@ if [ $? -eq 0 ]; then
   sudo chmod -R 755 /home/pi/piRa1n/
   sudo systemctl start piRa1n.service
   # echo 'Updates completed, you're ready to jailbreak iOS 14! You can shut down your Pi.'
-  echo 'Updates completed :) You can shut down your Pi.'
+  echo 'Updates completed.'
 else
-  echo 'Cannot download updates, you are offline!'
+  echo 'Cannot download updates, you are offline. Try again!'
 fi

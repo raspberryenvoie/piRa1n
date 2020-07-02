@@ -6,8 +6,6 @@ if [ $? -eq 0 ]; then
       sudo apt-get update
       sudo apt-get upgrade -y 
      } > /dev/null
-    rm -rf /home/pi/piRa1n-web/
-    git clone https://github.com/raspberryenvoie/piRa1n-web.git /home/pi/piRa1n-web/
     sudo wget https://raw.githubusercontent.com/raspberryenvoie/piRa1n-web/master/index.php -O /var/www/html/index.php
   else
     sudo apt-get update

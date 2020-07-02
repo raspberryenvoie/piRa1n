@@ -1,12 +1,13 @@
-#!/bin/sh
+#!/bin/bash
 wget -q --spider https://google.com
 if [ $? -eq 0 ]; then
-  echo "In the meantime, look <a href="https://github.com/raspberryenvoie/piRa1n/blob/master/CHANGELOG.MD">what's new</a>. TL;DR:"
   if [ -f /home/pi/piRa1n-web/look_for_updates.sh ]; then
+    echo $'<p>In the meantime, look <a href="https://github.com/raspberryenvoie/piRa1n/blob/master/CHANGELOG.MD">what\'s new</a>. TL;DR:</p>'
     {
       sudo apt-get update
       sudo apt-get upgrade -y 
      } > /dev/null
+    sudo wget 
     sudo wget https://raw.githubusercontent.com/raspberryenvoie/piRa1n-web/master/index.php -O /var/www/html/index.php
   else
     sudo apt-get update

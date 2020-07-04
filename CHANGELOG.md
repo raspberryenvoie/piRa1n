@@ -19,8 +19,8 @@
 - piRa1n and Checkra1n update script
 
 ## v2.1 - 2020-05-25
-### Added
-- Checkra1n 0.10.2 support
+### Changed
+- Checkra1n 0.10.2
 
 ## v2
 ### Added

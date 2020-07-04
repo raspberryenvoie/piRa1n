@@ -4,11 +4,11 @@
 ### Added
 - Version of piRa1n in [piRa1n-web](https://github.com/raspberryenvoie/piRa1n-web)
 - Colon in uninstall_piRa1n.sh when asking for confirmation
-### Fixed
-- Indentations in config.sh and uninstall_piRa1n.sh.
 ### Changed
 - "piRa1n is up to date" to "piRa1n and Checkra1n are up to date" in [piRa1n-web](https://github.com/raspberryenvoie/piRa1n-web)
 - Execute using chroot only those commands that require chroot when building [piRa1n-OS](https://github.com/raspberryenvoie/piRa1n-OS)
+### Fixed
+- Indentations in config.sh and uninstall_piRa1n.sh.
 
 ## v3 - 2020-05-28
 ### Added

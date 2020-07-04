@@ -1,5 +1,5 @@
 #!/bin/sh
-read -r -p "Do you really want to remove piRa1n? [Y/n] " input
+read -r -p "Do you really want to remove piRa1n? [Y/n]: " input
 case $input in
     [yY][eE][sS]|[yY])
         echo 'Removing piRa1n...'

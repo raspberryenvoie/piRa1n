@@ -1,17 +1,21 @@
 #!/bin/sh
 wget -q --spider https://google.com
 if [ $? -eq 0 ]; then
+  sudo systemctl stop piRa1n.service
   if [ -f /home/pi/piRa1n-web/look_for_updates.sh ]; then
     {
       sudo apt-get update
       sudo apt-get upgrade -y 
      } > /dev/null
-    sudo wget https://raw.githubusercontent.com/raspberryenvoie/piRa1n-web/master/index.php -O /var/www/html/index.php
+    rm -rf /home/pi/piRa1n-web/
+    cd /home/pi/
+    git clone https://github.com/raspberryenvoie/piRa1n-web.git
+    cd piRa1n-web/
+    sudo cp index.php options.php shutdown.php style.css stylesheet.css update.php update_status.php /var/www/html/
   else
     sudo apt-get update
     sudo apt-get upgrade -y
   fi
-  sudo systemctl stop piRa1n.service
   sudo mv /home/pi/piRa1n/piRa1n.sh /home/pi/piRa1n.sh.backup
   sudo rm -rf /home/pi/piRa1n/
   cd /home/pi/
@@ -23,7 +27,7 @@ if [ $? -eq 0 ]; then
   sudo chown -R pi:pi /home/pi/piRa1n/
   sudo chmod -R 755 /home/pi/piRa1n/
   sudo systemctl start piRa1n.service
-  # echo 'Updates completed, you're ready to jailbreak iOS 14! You can shut down your Pi.'
+  # echo 'Updates completed, you're ready to jailbreak iOS 14!'
   echo 'Updates completed.'
 else
   echo 'Cannot download updates, you are offline. Try again later!'

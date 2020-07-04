@@ -3,6 +3,7 @@
 ## 3.1 - 2020-07-04
 ### Added
 - Version of piRa1n in [piRa1n-web](https://github.com/raspberryenvoie/piRa1n-web)
+- Colon in uninstall_piRa1n.sh when asking for confirmation
 ### Fixed
 - Indentations in config.sh and uninstall_piRa1n.sh.
 ### Changed

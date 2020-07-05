@@ -6,10 +6,13 @@ if [ $? -eq 0 ]; then
     {
       sudo apt-get update
       sudo apt-get upgrade -y 
-     } > /dev/null
-    rm -rf /home/pi/piRa1n-web/
+    } > /dev/null
     cd /home/pi/
-    git clone https://github.com/raspberryenvoie/piRa1n-web.git
+    git clone https://github.com/raspberryenvoie/piRa1n-web.git temp/
+    mv temp/* piRa1n-web/
+    rm -rf temp/
+    sudo chown -R pi:pi /home/pi/piRa1n-web/
+    sudo chmod -R 755 /home/pi/piRa1n-web/
     cd piRa1n-web/
     sudo cp index.php options.php shutdown.php style.css stylesheet.css update.php update_status.php /var/www/html/
   else

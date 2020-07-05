@@ -1,6 +1,6 @@
 # Changelog
 
-## v3.1 - 2020-07-04
+## v3.1 - 2020-07-05
 ### Added
 - Colon in uninstall_piRa1n.sh when asking for confirmation
 ### Changed

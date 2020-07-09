@@ -4,8 +4,8 @@
 ### Added
 - Colon in uninstall_piRa1n.sh when asking for confirmation
 ### Changed
-- [piRa1n-web](https://github.com/raspberryenvoie/piRa1n-web) V1.1
-- [piRa1n-OS](https://github.com/raspberryenvoie/piRa1n-OS) v2.1
+- [piRa1n-web v1.1](https://github.com/raspberryenvoie/piRa1n-web)
+- [piRa1n-OS v2.1](https://github.com/raspberryenvoie/piRa1n-OS)
 ### Fixed
 - Indentations in config.sh and uninstall_piRa1n.sh.
 

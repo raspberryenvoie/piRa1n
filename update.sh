@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 wget -q --spider https://google.com
 if [[ $? -eq 0 ]]; then
   sudo systemctl stop piRa1n.service

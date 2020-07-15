@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Made with ♥️ by raspberryenvoie
 echo 'Installing piRa1n...make sure you have a working internet connection.'
 sudo apt update

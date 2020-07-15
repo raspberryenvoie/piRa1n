@@ -1,8 +1,8 @@
 #!/bin/sh
 wget -q --spider https://google.com
-if [[ $? -eq 0 ]]; then
+if [ $? -eq 0 ]; then
   sudo systemctl stop piRa1n.service
-  if [[ -f /home/pi/piRa1n-web/look_for_updates.sh ]]; then
+  if [ -f /home/pi/piRa1n-web/look_for_updates.sh ]; then
     {
       sudo apt-get update
       sudo apt-get upgrade -y 

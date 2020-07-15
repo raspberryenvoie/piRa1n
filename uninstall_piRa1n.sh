@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 read -r -p "Do you really want to remove piRa1n? [Y/n]: " input
 case $input in
     [yY][eE][sS]|[yY])

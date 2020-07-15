@@ -4,14 +4,14 @@ while true; do
   case $input in
       [yY][eE][sS]|[yY])
         sudo systemctl stop piRa1n.service
-        echo "#!/bin/sh
+        echo "#!/bin/bash
 sudo /home/pi/piRa1n/piRa1n -c -E
 sudo /sbin/shutdown now" > /home/pi/piRa1n/piRa1n.sh
         break
         ;;
       [nN][oO]|[nN])
         sudo systemctl stop piRa1n.service
-        echo "#!/bin/sh
+        echo "#!/bin/bash
 while true
 do
   sudo /home/pi/piRa1n/piRa1n -c -E

@@ -7,7 +7,7 @@ sudo apt install git usbmuxd -y
 cd /home/pi/
 git clone https://github.com/raspberryenvoie/piRa1n.git
 cd piRa1n/
-wget https://assets.checkra.in/downloads/linux/cli/arm/dde0ee4255403a427636bb76e09e409487f8be128af4b7d89fac78548bd5b35a/checkra1n -O piRa1n # Download Checkra1n
+wget https://assets.checkra.in/downloads/linux/cli/arm/dde0ee4255403a427636bb76e09e409487f8be128af4b7d89fac78548bd5b35a/checkra1n -O checkra1n # Download Checkra1n
 chmod +x piRa1n
 # The following commands will enable piRa1n at startup
 echo "[Unit]

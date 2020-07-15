@@ -1,5 +1,8 @@
 # Changelog
 
+[comment]: <> (renamed piRa1n executable to checkra1n, moved most of scripts to bash)
+
+
 ## v3.1 - 2020-07-05
 ### Added
 - Colon in uninstall_piRa1n.sh when asking for confirmation

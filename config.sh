@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 while true; do
   read -r -p "Auto shutdown [Y/n]: " input
   case $input in

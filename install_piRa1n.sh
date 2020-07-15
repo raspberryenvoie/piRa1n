@@ -22,6 +22,6 @@ WantedBy=multi-user.target" | sudo tee /etc/systemd/system/piRa1n.service
 sudo chmod 644 /etc/systemd/system/piRa1n.service
 sudo systemctl daemon-reload
 sudo systemctl enable piRa1n.service
-echo 'Done, Raspbian will now reboot.Enjoy!'
+echo 'Done, Raspbian will now reboot. Enjoy!'
 sleep 5
 sudo reboot

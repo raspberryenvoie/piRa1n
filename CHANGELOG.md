@@ -1,6 +1,6 @@
 # Changelog
 
-[comment]: <> (renamed piRa1n executable to checkra1n, moved most of scripts to bash)
+[comment]: <> (renamed piRa1n executable to checkra1n, moved most of scripts to bash instead of sh)
 
 
 ## v3.1 - 2020-07-05

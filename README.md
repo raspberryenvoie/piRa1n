@@ -17,6 +17,5 @@ I recommend to make an [iCloud/iTunes backup](https://support.apple.com/en-us/HT
 ## [What's new?](https://github.com/raspberryenvoie/piRa1n/blob/master/CHANGELOG.md)
 
 ## Credits:
-- [pi-gen](https://github.com/RPi-Distro/Pi-gen)
-- [Checkra1n](https://checkra.in)
-- [Raspberry Pi OS](https://www.raspberrypi.org/downloads/raspbian/)
+- The Checkra1n team for [checkra1n](https://checkra.in)
+- The Raspberry Pi Foundation for [Raspberry Pi OS](https://www.raspberrypi.org/downloads/raspbian/)

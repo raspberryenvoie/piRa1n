@@ -1,6 +1,6 @@
 # Changelog
 
-## v4 This version is not ready yet
+## v4 - 2020-07-21
 ### Added
 - New option: auto recovery (automatically puts the iDevice into recovery mode)
 ### Changed

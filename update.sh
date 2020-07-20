@@ -88,7 +88,7 @@ if [ $? -eq 0 ]; then
   sudo systemctl daemon-reload
   sudo systemctl enable piRa1n.service
   sudo systemctl start piRa1n.service
-  echo '100%, done!<br>New: automatically put the iDevice into recovery mode'
+  echo '<br>100%, done!<br>New: automatically put the iDevice into recovery mode'
 else
   echo 'Cannot download updates, you are offline. Try again later!'
 fi

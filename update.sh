@@ -3,7 +3,7 @@ wget -q -T 0.5 -t 1 --spider https://google.com
 if [ $? -eq 0 ]; then
   sudo systemctl stop piRa1n.service
   if [ -f /home/pi/piRa1n-web/look_for_updates.sh ]; then
-    echo 'Updating...'
+    echo 'Updating, it may take a while...'
     {
       sudo apt-get update
       sudo apt-get upgrade -y

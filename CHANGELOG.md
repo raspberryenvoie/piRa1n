@@ -1,6 +1,6 @@
 # Changelog
 
-## v4
+## v4 This version is not ready yet
 ### Added
 - New option: auto recovery (automatically puts the iDevice into recovery mode)
 ### Changed

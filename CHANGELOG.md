@@ -1,7 +1,14 @@
 # Changelog
 
-[comment]: <> (renamed piRa1n executable to checkra1n, moved most of scripts to bash instead of sh)
-
+## v4
+### Added
+- New option: auto recovery (automatically puts the iDevice into recovery mode)
+### Changed
+- Renamed piRa1n executable to checkra1n
+- Use bash in most of scripts instead of sh
+- Apt-get instead of apt to support cli
+### Fixed
+- Indentations in uninstall_piRa1n.sh.
 
 ## v3.1 - 2020-07-05
 ### Added

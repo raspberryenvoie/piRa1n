@@ -71,6 +71,7 @@ if [ $? -eq 0 ]; then
   sudo chown -R pi:pi /home/pi/piRa1n/
   sudo chmod -R 755 /home/pi/piRa1n/
   rm -rf /lib/systemd/system/piRa1n.service
+  {
   echo '[Unit]
   Description=piRa1n
   After=multi-user.target
@@ -82,11 +83,12 @@ if [ $? -eq 0 ]; then
 
   [Install]
   WantedBy=multi-user.target' | sudo tee /etc/systemd/system/piRa1n.service
+  } > /dev/null
   sudo chmod 644 /etc/systemd/system/piRa1n.service
   sudo systemctl daemon-reload
   sudo systemctl enable piRa1n.service
   sudo systemctl start piRa1n.service
-  echo '100% Done!<br>New: automatically put the iDevice into recovery mode (recommended to enable this option)'
+  echo '100%, done!<br>New: automatically put the iDevice into recovery mode'
 else
   echo 'Cannot download updates, you are offline. Try again later!'
 fi

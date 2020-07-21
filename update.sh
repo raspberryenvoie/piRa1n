@@ -88,7 +88,7 @@ if [ $? -eq 0 ]; then
   sudo systemctl daemon-reload
   sudo systemctl enable piRa1n.service
   sudo systemctl start piRa1n.service
-  echo '<br>100%, done!<br>New: automatically put the iDevice into recovery mode first to avoid file system corruption. When it's in recovery mode, put it into DFU mode to jailbreak it.<br> Read the page entitled How to use piRa1n for more informations.'
+  echo '<br>100%, done!<br>New: automatically put the iDevice into recovery mode first to avoid file system corruption. When it is in recovery mode, put it into DFU mode to jailbreak it.<br> Read the page entitled How to use piRa1n for more informations.'
 else
   echo 'Cannot download updates, you are offline. Try again later!'
 fi

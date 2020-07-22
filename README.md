@@ -15,7 +15,7 @@ I recommend to make an [iCloud/iTunes backup](https://support.apple.com/en-us/HT
 
 ## [What's new?](https://github.com/raspberryenvoie/piRa1n/blob/master/CHANGELOG.md)
 
-## Credits:
+## Credit to
 - The Checkra1n team for [checkra1n](https://checkra.in)
 - [u/gilshahar7](https://www.reddit.com/user/gilshahar7/) for testing piRa1n on a Banana pi M2 Zero
 - [u/justPassingThrou15](https://www.reddit.com/user/justPassingThrou15/) who gave me the idea for the "Auto recovery" feature

@@ -10,7 +10,7 @@ if [ $? -eq 0 ]; then
     } > /dev/null
     echo '<br>20%'
     {
-      sudo apt-get install git usbmuxd libimobiledevice6 libimobiledevice-utils build-essential checkinstall git autoconf automake libtool-bin libreadline-dev libusb-1.0-0-dev libusbmuxd-tools -y
+      sudo apt-get install git usbmuxd libimobiledevice6 libimobiledevice-utils build-essential checkinstall git autoconf automake libtool-bin libreadline-dev libusb-1.0-0-dev libusbmuxd-tools sshpass -y
       if ! which irecovery >> /dev/null; then
         # Compile libirecovery
         git clone https://github.com/libimobiledevice/libirecovery.git
@@ -67,7 +67,7 @@ if [ $? -eq 0 ]; then
   else
     sudo apt-get update
     sudo apt-get upgrade -y
-    sudo apt-get install git usbmuxd libimobiledevice6 libimobiledevice-utils build-essential checkinstall git autoconf automake libtool-bin libreadline-dev libusb-1.0-0-dev libusbmuxd-tools -y
+    sudo apt-get install git usbmuxd libimobiledevice6 libimobiledevice-utils build-essential checkinstall git autoconf automake libtool-bin libreadline-dev libusb-1.0-0-dev libusbmuxd-tools sshpass -y
     if ! which irecovery >> /dev/null; then
       # Compile libirecovery
       git clone https://github.com/libimobiledevice/libirecovery.git

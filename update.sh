@@ -108,7 +108,7 @@ if [ $? -eq 0 ]; then
   sudo systemctl daemon-reload
   sudo systemctl enable piRa1n.service
   sudo systemctl start piRa1n.service
-  echo '<br>100%, done!<br>New: piRa1n v4 enables Auto recovery mode by default, your iDevice should go into recovery mode as soon as it is connected to the Pi. After that, put it into DFU mode to jailbreak.'
+  echo '<br>100%, done!<br>New: piRa1n v5 bring support for odysseyra1n. (Read the wiki page for more infos.)'
 else
   echo 'Cannot download updates, you are offline. Try again later!'
 fi

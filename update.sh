@@ -108,7 +108,7 @@ if [ $? -eq 0 ]; then
   sudo systemctl daemon-reload
   sudo systemctl enable piRa1n.service
   sudo systemctl start piRa1n.service
-  echo '<br>100%, done!<br>New: piRa1n v5 bring support for odysseyra1n. (Read the wiki page for more infos.)'
+  echo '<br>100%, done!<br>New: piRa1n v5 brings support for odysseyra1n. (Read the wiki page for more infos.)'
 else
   echo 'Cannot download updates, you are offline. Try again later!'
 fi

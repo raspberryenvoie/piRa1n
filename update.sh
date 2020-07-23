@@ -10,7 +10,7 @@ if [ $? -eq 0 ]; then
     } > /dev/null
     echo '<br>20%'
     {
-      sudo apt-get install git usbmuxd libimobiledevice6 libimobiledevice-utils build-essential checkinstall git autoconf automake libtool-bin libreadline-dev libusb-1.0-0-dev -y
+      sudo apt-get install git usbmuxd libimobiledevice6 libimobiledevice-utils build-essential checkinstall git autoconf automake libtool-bin libreadline-dev libusb-1.0-0-dev libusbmuxd-tools -y
       if ! which irecovery >> /dev/null; then
         # Compile libirecovery
         git clone https://github.com/libimobiledevice/libirecovery.git
@@ -32,7 +32,7 @@ if [ $? -eq 0 ]; then
     sudo chown -R pi:pi /home/pi/piRa1n-web/
     sudo chmod -R 755 /home/pi/piRa1n-web/
     cd piRa1n-web/
-    sudo cp index.php options.php shutdown.php style.css stylesheet.css update.php update_status.php exit_recovery_mode.php /var/www/html/
+    sudo cp index.php options.php shutdown.php style.css stylesheet.css update.php update_status.php exit_recovery_mode.php odysseyra1n.php /var/www/html/
     if ! grep -q 'www-data ALL=(ALL) NOPASSWD: /home/pi/piRa1n/exit_recovery_mode.sh' /etc/sudoers; then
       cat /etc/sudoers > /home/pi/sudoers.temp
       sed -i '/End of piRa1n-web/iwww-data ALL=(ALL) NOPASSWD: /home/pi/piRa1n/exit_recovery_mode.sh' /home/pi/sudoers.temp
@@ -43,11 +43,31 @@ if [ $? -eq 0 ]; then
         echo 'Failed to modify /etc/sudoers. Run "sudo visudo" and add this line: "www-data ALL=(ALL) NOPASSWD: /home/pi/piRa1n/exit_recovery_mode.sh"'
       fi
     fi
+    if ! grep -q 'www-data ALL=(ALL) NOPASSWD: /home/pi/piRa1n/odysseyra1n.sh' /etc/sudoers; then
+      cat /etc/sudoers > /home/pi/sudoers.temp
+      sed -i '/End of piRa1n-web/iwww-data ALL=(ALL) NOPASSWD: /home/pi/piRa1n/odysseyra1n.sh' /home/pi/sudoers.temp
+      if visudo -c -f /home/pi/sudoers.temp > /dev/null 2>&1; then
+        cat /home/pi/sudoers.temp > /etc/sudoers
+        rm -rf /home/pi/sudoers.temp
+      else
+        echo 'Failed to modify /etc/sudoers. Run "sudo visudo" and add this line: "www-data ALL=(ALL) NOPASSWD: /home/pi/piRa1n/odysseyra1n.sh"'
+      fi
+    fi
+    if ! grep -q 'www-data ALL=(ALL) NOPASSWD: /home/pi/piRa1n-web/odysseyra1n_done.sh' /etc/sudoers; then
+      cat /etc/sudoers > /home/pi/sudoers.temp
+      sed -i '/End of piRa1n-web/iwww-data ALL=(ALL) NOPASSWD: /home/pi/piRa1n-web/odysseyra1n_done.sh' /home/pi/sudoers.temp
+      if visudo -c -f /home/pi/sudoers.temp > /dev/null 2>&1; then
+        cat /home/pi/sudoers.temp > /etc/sudoers
+        rm -rf /home/pi/sudoers.temp
+      else
+        echo 'Failed to modify /etc/sudoers. Run "sudo visudo" and add this line: "www-data ALL=(ALL) NOPASSWD: /home/pi/piRa1n-web/odysseyra1n_done.sh"'
+      fi
+    fi
     echo '<br>60%'
   else
     sudo apt-get update
     sudo apt-get upgrade -y
-    sudo apt-get install git usbmuxd libimobiledevice6 libimobiledevice-utils build-essential checkinstall git autoconf automake libtool-bin libreadline-dev libusb-1.0-0-dev -y
+    sudo apt-get install git usbmuxd libimobiledevice6 libimobiledevice-utils build-essential checkinstall git autoconf automake libtool-bin libreadline-dev libusb-1.0-0-dev libusbmuxd-tools -y
     if ! which irecovery >> /dev/null; then
       # Compile libirecovery
       git clone https://github.com/libimobiledevice/libirecovery.git

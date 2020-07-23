@@ -3,7 +3,7 @@
 echo 'Installing piRa1n...make sure you have a working internet connection.'
 sudo apt-get update
 sudo apt-get upgrade -y
-sudo apt-get install git usbmuxd libimobiledevice6 libimobiledevice-utils build-essential checkinstall git autoconf automake libtool-bin libreadline-dev libusb-1.0-0-dev -y
+sudo apt-get install git usbmuxd libimobiledevice6 libimobiledevice-utils build-essential checkinstall git autoconf automake libtool-bin libreadline-dev libusb-1.0-0-dev libusbmuxd-tools -y
 cd /home/pi/
 # Compile libirecovery
 git clone https://github.com/libimobiledevice/libirecovery.git

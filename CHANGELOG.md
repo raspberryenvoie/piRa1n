@@ -1,6 +1,10 @@
 # Changelog
 
-## v5 - 2020-07-23 (not ready yet)
+## v5.0.1 - 2020-07-24
+### Fixed
+- Shut down button
+
+## v5 - 2020-07-23
 ### Added
 - Odysseyra1n script
 

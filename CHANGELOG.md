@@ -1,5 +1,9 @@
 # Changelog
 
+## v5.0.2 - 2020-07-31
+### Fixed
+- Startup script not saving the log
+
 ## v5.0.1 - 2020-07-24
 ### Fixed
 - Shut down button

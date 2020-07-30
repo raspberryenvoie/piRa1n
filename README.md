@@ -18,7 +18,7 @@ I recommend to make an [iCloud/iTunes backup](https://support.apple.com/en-us/HT
 
 ## Credits
 - The Checkra1n team for [checkra1n](https://checkra.in)
-- [u/gilshahar7](https://www.reddit.com/user/gilshahar7/) for testing piRa1n on a Banana pi M2 Zero
-- [u/justPassingThrou15](https://www.reddit.com/user/justPassingThrou15/) who gave me the idea for the "Auto recovery" feature
+- [u/gilshahar7](https://www.reddit.com/user/gilshahar7/) for trying piRa1n on a Banana pi M2 Zero
+- [u/justPassingThrou15](https://www.reddit.com/user/justPassingThrou15/) who gave me the idea for the "Auto recovery mode" feature
 - [u/FIdelity88](https://www.reddit.com/user/FIdelity88), his Ra1nbox inspired me to use libimobile and libirecovery to create the "Auto recovery mode" feature
 - [libimobiledevice](https://github.com/libimobiledevice/) for [libimobiledevice](https://github.com/libimobiledevice/libimobiledevice) and [libirecovery](https://github.com/libimobiledevice/libirecovery)

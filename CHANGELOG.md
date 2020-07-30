@@ -6,7 +6,7 @@
 
 ## v5.0.1 - 2020-07-24
 ### Fixed
-- Shut down button
+- Shut down button in piRa1n-web
 
 ## v5 - 2020-07-23
 ### Added

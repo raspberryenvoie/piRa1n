@@ -93,16 +93,16 @@ if [ $? -eq 0 ]; then
   rm -rf /lib/systemd/system/piRa1n.service
   {
   echo '[Unit]
-  Description=piRa1n
-  After=multi-user.target
+Description=piRa1n
+After=multi-user.target
 
-  [Service]
-  ExecStart=/home/pi/piRa1n/piRa1n.sh
-  StandardOutput=file:/var/log/piRa1n.log
-  StandardError=file:/var/log/piRa1n.log
+[Service]
+ExecStart=/home/pi/piRa1n/piRa1n.sh
+StandardOutput=file:/var/log/piRa1n.log
+StandardError=file:/var/log/piRa1n.log
 
-  [Install]
-  WantedBy=multi-user.target' | sudo tee /etc/systemd/system/piRa1n.service
+[Install]
+WantedBy=multi-user.target' | sudo tee /etc/systemd/system/piRa1n.service
   } > /dev/null
   sudo chmod 644 /etc/systemd/system/piRa1n.service
   sudo systemctl daemon-reload

@@ -1,4 +1,5 @@
 # Changelog
+[comment]: <> (Fixed file name when running chmod +x in the update script.)
 
 ## v5.0.2 - 2020-07-31
 ### Fixed

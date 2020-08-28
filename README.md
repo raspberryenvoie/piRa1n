@@ -22,3 +22,5 @@ I recommend to make an [iCloud/iTunes backup](https://support.apple.com/en-us/HT
 - [u/justPassingThrou15](https://www.reddit.com/user/justPassingThrou15/) who gave me the idea of the "Auto recovery mode" feature
 - [u/FIdelity88](https://www.reddit.com/user/FIdelity88), his Ra1nbox inspired me to use libimobile and libirecovery to create the "Auto recovery mode" feature
 - [libimobiledevice](https://github.com/libimobiledevice/) for [libimobiledevice](https://github.com/libimobiledevice/libimobiledevice) and [libirecovery](https://github.com/libimobiledevice/libirecovery)
+- CoolStar for [odysseyra1n](https://github.com/coolstar/Odyssey-bootstrap)
+- [The Procursus Team](https://github.com/ProcursusTeam/) for [Procursus](https://github.com/ProcursusTeam/Procursus)

@@ -1,6 +1,9 @@
-# piRa1n
-piRa1n lets you easily turn a Raspberry Pi 4 or a Banana pi M2 Zero into a portable Checkra1n dongle. piRa1n can install Odysseyra1n now.
-[Demo](https://youtu.be/lqGb8SG-VII)
+<h1 align="center">piRa1n</h1>
+<h3 align="center">Easily turn a Raspberry Pi 4 or a Banana pi M2 Zero into a portable Checkra1n dongle.</h3>
+
+---------
+
+[Here](https://youtu.be/lqGb8SG-VII) is a demo of piRa1n.
 
 **This only works with a Raspberry Pi 4! Other versions of the Raspberry Pi are not supported. It also works with a Banana pi M2 Zero.**
 

@@ -17,10 +17,10 @@ Read the [wiki pages](https://github.com/raspberryenvoie/piRa1n/wiki) for detail
 Read the [changelog file](https://github.com/raspberryenvoie/piRa1n/blob/master/CHANGELOG.md).
 
 # Credits
-- The Checkra1n Team for [checkra1n](https://checkra.in)
+- The Checkra1n Team for [Checkra1n](https://checkra.in)
 - [u/gilshahar7](https://www.reddit.com/user/gilshahar7/) for trying piRa1n on a Banana Pi M2 Zero
 - [u/justPassingThrou15](https://www.reddit.com/user/justPassingThrou15/) who gave me the idea of the "Auto recovery mode" feature
 - [u/FIdelity88](https://www.reddit.com/user/FIdelity88), his Ra1nbox inspired me to use libimobile and libirecovery to create the "Auto recovery mode" feature
 - [libimobiledevice](https://github.com/libimobiledevice/) for [libimobiledevice](https://github.com/libimobiledevice/libimobiledevice) and [libirecovery](https://github.com/libimobiledevice/libirecovery)
-- CoolStar for [odysseyra1n](https://github.com/coolstar/Odyssey-bootstrap)
+- CoolStar for [Odysseyra1n](https://github.com/coolstar/Odyssey-bootstrap)
 - [The Procursus Team](https://github.com/ProcursusTeam/) for [Procursus](https://github.com/ProcursusTeam/Procursus)

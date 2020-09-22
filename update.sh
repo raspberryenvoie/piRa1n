@@ -86,7 +86,7 @@ if [ $? -eq 0 ]; then
   git clone https://github.com/raspberryenvoie/piRa1n.git
   echo '<br>80%'
   cd piRa1n/
-  wget https://assets.checkra.in/downloads/linux/cli/arm/dde0ee4255403a427636bb76e09e409487f8be128af4b7d89fac78548bd5b35a/checkra1n -O checkra1n # Download Checkra1n
+  wget https://assets.checkra.in/downloads/linux/cli/arm/d751f4b245bd4071c571654607ca4058e9e7dc4a5fa30639024b6067eebf5c3b/checkra1n -O checkra1n # Download Checkra1n
   chmod +x checkra1n
   chown -R pi:pi /home/pi/piRa1n/
   chmod -R 755 /home/pi/piRa1n/

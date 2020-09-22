@@ -3,7 +3,7 @@
 <p align="center"><img src="https://gist.githubusercontent.com/raspberryenvoie/9266a96148dd3ae0266a3bbe39b9c4f0/raw/eaad7fc642b830cf6fee044727c8b8b907f1b2a2/piRa1n_logo.png" alt="logo"></p>
 
 ---------
-Support for checkra1n for iOS 14 is coming soon.
+Support for checkra1n 0.11 beta is coming soon.
 
 [Here](https://youtu.be/lqGb8SG-VII) is a demo of piRa1n.
 

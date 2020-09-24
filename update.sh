@@ -108,7 +108,7 @@ WantedBy=multi-user.target' | tee /etc/systemd/system/piRa1n.service
   systemctl daemon-reload
   systemctl enable piRa1n.service
   systemctl start piRa1n.service
-  echo '<br>100%, done!<br>New: Bug fix.'
+  echo '<br>100%, done!<br>New: checkra1n 0.11.0 beta.'
 else
   echo 'Cannot download updates, you are offline. Try again later!'
 fi

@@ -34,9 +34,6 @@ update_piRa1n() {
     rm -rf /home/pi/piRa1n-web/
     git clone https://github.com/raspberryenvoie/piRa1n-web.git  /home/pi/piRa1n-web/
     mv /tmp/update.out /home/pi/piRa1n-web/
-    # Fix file permissions
-    chown -R pi:pi /home/pi/piRa1n-web/
-    chmod -R 755 /home/pi/piRa1n-web/
     # Overwrite /var/www/html/ with new files
     rm -rf /var/www/html/*
     cp -R /home/pi/piRa1n-web/html/* /var/www/html/
@@ -75,10 +72,7 @@ EOF
   rm -rf  /home/pi/piRa1n/
   git clone https://github.com/raspberryenvoie/piRa1n.git  /home/pi/piRa1n/
   # Put back piRa1n.conf
-  mv /tmp/piRa1n.conf /home/pi/piRa1n-web/
-  # Fix file permissions
-  chown -R pi:pi /home/pi/piRa1n/
-  chmod -R 755 /home/pi/piRa1n/
+  mv /tmp/piRa1n.conf /home/pi/piRa1n/
 }
 
 update_checkra1n() {
@@ -96,6 +90,11 @@ update_checkra1n() {
   # Lower case
   sed -i 's/\(.*\)/\L\1/' checkra1n_version
   cd -
+}
+
+fix_permissions() {
+  chown -R pi:pi /home/pi/piRa1n*/
+  chmod -R 755 /home/pi/piRa1n*/
 }
 
 enable_at_startup() {
@@ -119,17 +118,20 @@ EOF
 
 # Update if internet is availble
 if wget -q -T 0.5 -t 1 --spider https://duckduckgo.com; then
-  echo '[1/4] Updating the system and installing the dependencies...'
+  echo '[1/5] Updating the system and installing the dependencies...'
   update_and_install_dependencies > /var/log/piRa1n_updates.log 2>&1 || { echo 'Failed to update the system and to install the dependencies. See /var/log/piRa1n_updates.log for more info.'; exit 1; }
   compile_libirecovery >> /var/log/piRa1n_updates.log 2>&1 || { echo 'Failed to compile libirecovery. See /var/log/piRa1n_updates.log for more info.'; exit 1; }
 
-  echo '[2/4] Updating piRa1n and piRa1n-web (if installed)...'
+  echo '[2/5] Updating piRa1n and piRa1n-web (if installed)...'
   update_piRa1n >> /var/log/piRa1n_updates.log 2>&1 || { echo 'Failed to update piRa1n and piRa1n-web (if installed). See /var/log/piRa1n_updates.log for more info.'; exit 1; }
 
-  echo '[3/4] Updating checkra1n...'
+  echo '[3/5] Updating checkra1n...'
   update_checkra1n >> /var/log/piRa1n_updates.log 2>&1 || { echo 'Failed to update checkra1n. See /var/log/piRa1n_updates.log for more info.'; exit 1; }
 
-  echo '[4/4] Enabling piRa1n at startup...'
+  echo '[4/5] Fixing file permissions...'
+  fix_permissions >> /var/log/piRa1n_updates.log 2>&1 || { echo 'Failed to fix file permissions. See /var/log/piRa1n_updates.log for more info.'; exit 1; }
+
+  echo '[5/5] Enabling piRa1n at startup...'
   enable_at_startup >> /var/log/piRa1n_updates.log 2>&1 || { echo 'Failed to enable piRa1n at startup. See /var/log/piRa1n_updates.log for more info.'; exit 1; }
   cat << EOF
 All done!

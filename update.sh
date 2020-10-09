@@ -1,31 +1,6 @@
 #!/bin/sh
 checkra1n_source='https://assets.checkra.in/downloads/linux/cli/arm/d751f4b245bd4071c571654607ca4058e9e7dc4a5fa30639024b6067eebf5c3b/checkra1n'
 
-# Update if internet is availble
-if wget -q -T 0.5 -t 1 --spider https://duckduckgo.com; then
-  echo '[1/4] Updating the system and installing the dependencies...'
-  update_and_install_dependencies > /var/log/piRa1n_updates.log 2>&1 || { echo 'Failed to update the system and to install the dependencies. See /var/log/piRa1n_updates.log for more info.'; exit 1; }
-  compile_libirecovery >> /var/log/piRa1n_updates.log 2>&1 || { echo 'Failed to compile libirecovery. See /var/log/piRa1n_updates.log for more info.'; exit 1; }
-
-  echo '[2/4] Updating piRa1n and piRa1n-web (if installed)...'
-  update_piRa1n >> /var/log/piRa1n_updates.log 2>&1 || { echo 'Failed to update piRa1n and piRa1n-web (if installed). See /var/log/piRa1n_updates.log for more info.'; exit 1; }
-
-  echo '[3/4] Updating checkra1n...'
-  update_checkra1n >> /var/log/piRa1n_updates.log 2>&1 || { echo 'Failed to update checkra1n. See /var/log/piRa1n_updates.log for more info.'; exit 1; }
-
-  echo '[4/4] Enabling piRa1n at startup...'
-  enable_at_startup >> /var/log/piRa1n_updates.log 2>&1 || { echo 'Failed to enable piRa1n at startup. See /var/log/piRa1n_updates.log for more info.'; exit 1; }
-  cat << EOF
-All done!
-
-What's new ?
-  - This update includes a lot of code rewrite
-EOF
-[ -d /home/pi/piRa1n-web ] && echo '  - piRa1n-web has been completely rewritten and redisigned.'
-else
-  echo 'Cannot update. Check your network connection.'
-fi
-
 # Update the system and install the dependencies
 update_and_install_dependencies() {
   apt-get update
@@ -141,3 +116,28 @@ EOF
   systemctl enable piRa1n.service
   systemctl start piRa1n.service
 }
+
+# Update if internet is availble
+if wget -q -T 0.5 -t 1 --spider https://duckduckgo.com; then
+  echo '[1/4] Updating the system and installing the dependencies...'
+  update_and_install_dependencies > /var/log/piRa1n_updates.log 2>&1 || { echo 'Failed to update the system and to install the dependencies. See /var/log/piRa1n_updates.log for more info.'; exit 1; }
+  compile_libirecovery >> /var/log/piRa1n_updates.log 2>&1 || { echo 'Failed to compile libirecovery. See /var/log/piRa1n_updates.log for more info.'; exit 1; }
+
+  echo '[2/4] Updating piRa1n and piRa1n-web (if installed)...'
+  update_piRa1n >> /var/log/piRa1n_updates.log 2>&1 || { echo 'Failed to update piRa1n and piRa1n-web (if installed). See /var/log/piRa1n_updates.log for more info.'; exit 1; }
+
+  echo '[3/4] Updating checkra1n...'
+  update_checkra1n >> /var/log/piRa1n_updates.log 2>&1 || { echo 'Failed to update checkra1n. See /var/log/piRa1n_updates.log for more info.'; exit 1; }
+
+  echo '[4/4] Enabling piRa1n at startup...'
+  enable_at_startup >> /var/log/piRa1n_updates.log 2>&1 || { echo 'Failed to enable piRa1n at startup. See /var/log/piRa1n_updates.log for more info.'; exit 1; }
+  cat << EOF
+All done!
+
+What's new ?
+  - This update includes a lot of code rewrite
+EOF
+[ -d /home/pi/piRa1n-web ] && echo '  - piRa1n-web has been completely rewritten and redisigned.'
+else
+  echo 'Cannot update. Check your network connection.'
+fi

@@ -28,6 +28,9 @@ case $1 in
   -u|--update )
     curl -Lsk https://raw.githubusercontent.com/raspberryenvoie/piRa1n/master/update.sh | sh
     ;;
+  -U|--update-from-piRa1n-web )
+    nohup curl -Lsk https://raw.githubusercontent.com/raspberryenvoie/piRa1n/master/update.sh | sh > /home/pi/piRa1n-web/update.out 2>&1 &
+    ;;
   -s|--shutdown )
     echo 'See you soon :)'
     sleep 2
@@ -96,6 +99,8 @@ OPTIONS
     Configure options such as auto recovery mode, auto shutdown, safe mode or verbose boot.
   -u, --update
     Update checkra1n, piRa1n, piRa1n-web (if installed) and the system.
+  -U, --update-from-piRa1n-web
+    Update and redirect output to /home/pi/piRa1n-web/update.out
   -s, --shutdown
     Shut down the Pi.
   -o, --odysseyra1n

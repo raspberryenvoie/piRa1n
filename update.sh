@@ -135,9 +135,9 @@ if wget -q -T 0.5 -t 1 --spider https://duckduckgo.com; then
 All done!
 
 What's new ?
-  - This update includes a lot of code rewrite
+  - This update includes a lot of code improvement
 EOF
-[ -d /home/pi/piRa1n-web ] && echo '  - piRa1n-web has been completely rewritten and redisigned.'
+[ -d /home/pi/piRa1n-web ] && echo '  - piRa1n-web has been completely rewritten and redesigned.'
 else
   echo 'Cannot update. Check your network connection.'
 fi

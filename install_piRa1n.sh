@@ -1,39 +1,80 @@
 #!/bin/bash
-# Made with ♥️ by raspberryenvoie
-echo 'Installing piRa1n...make sure you have a working internet connection.'
-sudo apt-get update
-sudo apt-get upgrade -y
-sudo apt-get install git usbmuxd libimobiledevice6 libimobiledevice-utils build-essential checkinstall git autoconf automake libtool-bin libreadline-dev libusb-1.0-0-dev libusbmuxd-tools sshpass -y
-cd /home/pi/
+[[ $EUID -ne 0 ]] && { echo 'Please run as root'; exit 1; }
+
+checkra1n_source='https://assets.checkra.in/downloads/linux/cli/arm/d751f4b245bd4071c571654607ca4058e9e7dc4a5fa30639024b6067eebf5c3b/checkra1n'
+
+echo -e "\033[0;36m#####################################"
+echo -e "\033[0;32m#                                   #\033[0m"
+echo -e "\033[0;32m#  \033[0;36mWelcome to the piRa1n installer  \033[0;32m#\033[0m"
+echo -e "\033[0;32m#      \033[0;36mMade by raspberryenvoie      \033[0;32m#"
+echo -e "\033[0;32m#                                   #"
+echo -e "\033[0;32m#####################################"
+
+# Create a new pi user if it doesn't exist
+if ! id -u pi >/dev/null 2>&1; then
+  adduser --disabled-password --gecos "" pi
+  password="$(openssl rand -base64 30)"
+  echo "pi:${password}" | chpasswd
+  unset password
+fi
+
+# Update the system and install the dependencies
+apt-get update
+apt-get upgrade -y
+apt-get install -y git usbmuxd libimobiledevice6 libimobiledevice-utils \
+build-essential checkinstall git autoconf automake libtool-bin libreadline-dev \
+libusb-1.0-0-dev libusbmuxd-tools sshpass
 # Compile libirecovery
-git clone https://github.com/libimobiledevice/libirecovery.git
-cd libirecovery
+git clone https://github.com/libimobiledevice/libirecovery.git /home/pi/libirecovery
+cd /home/pi/libirecovery/
 ./autogen.sh
 cd /home/pi/libirecovery/
 make
-sudo make install
-sudo ldconfig
+make install
+ldconfig
 cd /home/pi/
 rm -rf libirecovery/
+
+# Install piRa1n
 git clone https://github.com/raspberryenvoie/piRa1n.git
-cd piRa1n/
-wget https://assets.checkra.in/downloads/linux/cli/arm/d751f4b245bd4071c571654607ca4058e9e7dc4a5fa30639024b6067eebf5c3b/checkra1n -O checkra1n # Download Checkra1n
+
+# Install checkra1n
+cd /home/pi/piRa1n/
+curl -Lko checkra1n $checkra1n_source
 chmod +x checkra1n
-# The following commands will enable piRa1n at startup
-echo '[Unit]
+./checkra1n --version > checkra1n_version 2>&1
+# Keep second line
+sed -i -n -e 2p checkra1n_version
+# Remove '# '
+sed -i 's/# //g' checkra1n_version
+# Lower case
+sed -i 's/\(.*\)/\L\1/' checkra1n_version
+cd -
+
+# Fix file permissions
+chown -R pi:pi /home/pi/piRa1n/
+chmod -R 755 /home/pi/piRa1n/
+
+# Enable piRa1n at startup
+cat << EOF > /etc/systemd/system/piRa1n.service
+[Unit]
 Description=piRa1n
 After=multi-user.target
 
 [Service]
-ExecStart=/home/pi/piRa1n/piRa1n.sh
-StandardOutput=file:/var/log/piRa1n.log
-StandardError=file:/var/log/piRa1n.log
+ExecStart=/home/pi/piRa1n/startup.sh
 
 [Install]
-WantedBy=multi-user.target' | sudo tee /etc/systemd/system/piRa1n.service
-sudo chmod 644 /etc/systemd/system/piRa1n.service
-sudo systemctl daemon-reload
-sudo systemctl enable piRa1n.service
-echo 'Done, the system will reboot. Enjoy!'
-sleep 5
-sudo reboot
+WantedBy=multi-user.target
+EOF
+chmod 644 /etc/systemd/system/piRa1n.service
+systemctl daemon-reload
+systemctl enable piRa1n.service
+systemctl start piRa1n.service
+
+read -p $'\n''Would you like to install piRa1n-web? [Y/n] ' install_piRa1n_web
+case $install_piRa1n_web in
+  [yY][eE][sS]|[yY] )
+    curl -Lsk https://raw.githubusercontent.com/raspberryenvoie/piRa1n-web/master/install_piRa1n-web.sh | bash
+    ;;
+esac

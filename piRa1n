@@ -1,0 +1,121 @@
+#!/bin/bash
+[[ $EUID -ne 0 ]] && { echo 'Please run as root'; exit 1; }
+
+case $1 in
+  -c|--configure )
+    systemctl stop piRa1n.service
+    echo '# piRa1n configuration'> /home/pi/piRa1n/piRa1n.conf
+    for i in 'Auto_Recovery_Mode' 'Auto_Shutdown' 'Safe_Mode' 'Verbose_Boot'; do
+      while true; do
+        read -p "$i [Y/n] " input
+        case $input in
+          [yY][eE][sS]|[yY] )
+            echo "$i=true" >> /home/pi/piRa1n/piRa1n.conf
+            break
+            ;;
+          [nN][oO]|[nN] )
+            echo "$i=false" >> /home/pi/piRa1n/piRa1n.conf
+            break
+            ;;
+          * )
+            ;;
+        esac
+      done
+    done
+    systemctl start piRa1n.service
+    echo 'The changes have been applied'
+    ;;
+  -u|--update )
+    curl -Lsk https://raw.githubusercontent.com/raspberryenvoie/piRa1n/master/update.sh | sh
+    ;;
+  -s|--shutdown )
+    echo 'See you soon :)'
+    sleep 2
+    /sbin/shutdown now
+    ;;
+  -o|--odysseyra1n )
+    systemctl stop piRa1n.service
+    if [[ -d /home/pi/odysseyra1n/ ]]; then
+      rm -rf odysseyra1n/*
+    else
+      mkdir /home/pi/odysseyra1n/
+    fi
+    cd /home/pi/odysseyra1n/
+    curl -Lko odysseyra1n.sh https://raw.githubusercontent.com/coolstar/Odyssey-bootstrap/master/procursus-deploy-linux-macos.sh
+    chmod +x odysseyra1n.sh
+    sed -i 's/.*read -p.*//g' odysseyra1n.sh
+    sed -i 's/scp -P4444/sshpass -p "alpine" scp -P4444/g' odysseyra1n.sh
+    sed -i 's/ssh -p4444/sshpass -p "alpine" ssh -p4444/g' odysseyra1n.sh
+    sed -i 's/curl -L/curl -Lk/g' odysseyra1n.sh
+    sed -i '/curl -Lk/asleep 7' odysseyra1n.sh
+    ./odysseyra1n.sh
+    ;;
+  -i|--install-piRa1n-web )
+    curl -Lsk https://raw.githubusercontent.com/raspberryenvoie/piRa1n-web/master/install_piRa1n-web.sh | bash
+    ;;
+  -e|--exit-recovery-mode )
+    echo 'Exiting recovery mode...'
+    /usr/local/bin/irecovery -c 'setenv auto-boot true'
+    /usr/local/bin/irecovery -c 'saveenv'
+    /usr/local/bin/irecovery -c 'reboot'
+    ;;
+  -l|--look-for-updates )
+    remote_version="$(curl -Lsk https://raw.githubusercontent.com/raspberryenvoie/piRa1n/master/version)"
+    local_version="$(< /home/pi/piRa1n/version)"
+    if [[ -z $remote_version ]]; then
+      echo '2'
+    else
+      if [[ $remote_version = "$local_version" ]]; then
+        echo '0'
+      elif [[ $remote_version != "$local_version" ]]; then
+        echo '1'
+      fi
+    fi
+    ;;
+  -S|--start-piRa1n )
+    systemctl start piRa1n.service
+    ;;
+  --jailbreak-log )
+    journalctl -u piRa1n.service
+    ;;
+  --update-log )
+    cat /var/log/piRa1n_updates.log
+    ;;
+  * )
+    cat << EOF
+##################################
+#                                #
+#  Welcome to the piRa1n script  #
+#                                #
+##################################
+
+Usage: $0 [OPTION]
+
+OPTIONS
+  -c, --configure
+    Configure options such as auto recovery mode, auto shutdown, safe mode or verbose boot.
+  -u, --update
+    Update checkra1n, piRa1n, piRa1n-web (if installed) and the system.
+  -s, --shutdown
+    Shut down the Pi.
+  -o, --odysseyra1n
+    Install odysseyra1n.
+  -i, --install-piRa1n-web
+    Install piRa1n-web (A web interface to control piRa1n).
+  -e, --exit-recovery-mode
+    Exit recovery mode (useful when your iDevice is stuck in recovery mode).
+  -l, --look-for-updates
+    Look for updates, print 0 if up to date, print 1 if updates are available and print 2 if network is unreachable.
+  -s, --start-piRa1n
+    Start piRa1n.service
+  --jailbreak-log
+    Output the jailbreak log
+  --update-log
+    Output the update log
+  -h, --help
+    Show this message ;)
+
+For more information: https://github.com/raspberryenvoie/piRa1n/wiki
+EOF
+    ;;
+esac

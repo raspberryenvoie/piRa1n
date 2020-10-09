@@ -39,7 +39,7 @@ update_piRa1n() {
     chmod -R 755 /home/pi/piRa1n-web/
     # Overwrite /var/www/html/ with new files
     rm -rf /var/www/html/*
-    cp /home/pi/piRa1n-web/html/* /var/www/html/
+    cp -R /home/pi/piRa1n-web/html/* /var/www/html/
 
     # Remove old sudoers lines and add new ones
     if grep -q 'piRa1n' /etc/sudoers; then

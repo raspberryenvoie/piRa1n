@@ -29,11 +29,13 @@ compile_libirecovery() {
 update_piRa1n() {
   # Update piRa1n-web if installed
   if [ -d /home/pi/piRa1n-web ]; then
-    cp /home/pi/piRa1n-web/update.out /tmp/
-    # Update piRa1n-web
-    rm -rf /home/pi/piRa1n-web/
-    git clone https://github.com/raspberryenvoie/piRa1n-web.git  /home/pi/piRa1n-web/
-    mv /tmp/update.out /home/pi/piRa1n-web/
+    cd /home/pi/piRa1n-web
+    rm -rf !(update.out)
+    rm -rf .git
+    git clone https://github.com/raspberryenvoie/piRa1n-web.git  /home/pi/tmp_piRa1n-web/
+    mv /home/pi/tmp_piRa1n-web/{*,.git} /home/pi/piRa1n-web/
+    rm -rf /home/pi/tmp_piRa1n-web/
+    cd -
     # Overwrite /var/www/html/ with new files
     rm -rf /var/www/html/*
     cp -R /home/pi/piRa1n-web/html/* /var/www/html/
@@ -79,9 +81,6 @@ update_checkra1n() {
   cd /home/pi/piRa1n/
   curl -Lko checkra1n $checkra1n_source
   chmod +x checkra1n
-  upstream_hash="$(echo $checkra1n_source | sed 's/https:\/\/assets.checkra.in\/downloads\/linux\/cli\/arm\///g' | sed 's/\/checkra1n//g')"
-  local_hash="$(sha256sum checkra1n)"
-  [ "$local_hash" = "$upstream_hash" ] || echo 'Warning, invalid hash'
   ./checkra1n --version > checkra1n_version 2>&1
   # Keep only second line
   sed -i -n -e 2p checkra1n_version
@@ -118,6 +117,8 @@ EOF
 
 # Update if internet is availble
 if wget -q -T 0.5 -t 1 --spider https://duckduckgo.com; then
+  systemctl stop piRa1n.service
+
   echo '[1/5] Updating the system and installing the dependencies...'
   update_and_install_dependencies > /var/log/piRa1n_updates.log 2>&1 || { echo 'Failed to update the system and to install the dependencies. See /var/log/piRa1n_updates.log for more info.'; exit 1; }
   compile_libirecovery >> /var/log/piRa1n_updates.log 2>&1 || { echo 'Failed to compile libirecovery. See /var/log/piRa1n_updates.log for more info.'; exit 1; }

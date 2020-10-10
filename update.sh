@@ -5,6 +5,7 @@ checkra1n_source='https://assets.checkra.in/downloads/linux/cli/arm/d751f4b245bd
 update_and_install_dependencies() {
   echo 'Updating the system and installing dependencies'
   apt-get update
+  dpkg --configure -a
   apt-get upgrade -y
   apt-get install -y git usbmuxd libimobiledevice6 libimobiledevice-utils \
   build-essential checkinstall git autoconf automake libtool-bin libreadline-dev \

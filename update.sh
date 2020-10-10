@@ -29,13 +29,10 @@ compile_libirecovery() {
 update_piRa1n() {
   # Update piRa1n-web if installed
   if [ -d /home/pi/piRa1n-web ]; then
-    cd /home/pi/piRa1n-web
-    rm -rf !(update.out)
-    rm -rf .git
+    rm -rf $(find /home/pi/piRa1n-web -mindepth 1 -maxdepth 1 -not -name 'update.out')
     git clone https://github.com/raspberryenvoie/piRa1n-web.git  /home/pi/tmp_piRa1n-web/
-    mv /home/pi/tmp_piRa1n-web/{*,.git} /home/pi/piRa1n-web/
+    mv $(find /home/pi/tmp_piRa1n-web/ -mindepth 1 -maxdepth 1) /home/pi/piRa1n-web/
     rm -rf /home/pi/tmp_piRa1n-web/
-    cd -
     # Overwrite /var/www/html/ with new files
     rm -rf /var/www/html/*
     cp -R /home/pi/piRa1n-web/html/* /var/www/html/

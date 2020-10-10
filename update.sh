@@ -1,8 +1,9 @@
 #!/bin/sh
 checkra1n_source='https://assets.checkra.in/downloads/linux/cli/arm/d751f4b245bd4071c571654607ca4058e9e7dc4a5fa30639024b6067eebf5c3b/checkra1n'
 
-# Update the system and install the dependencies
+# Update the system and install dependencies
 update_and_install_dependencies() {
+  echo 'Updating the system and installing dependencies'
   apt-get update
   apt-get upgrade -y
   apt-get install -y git usbmuxd libimobiledevice6 libimobiledevice-utils \
@@ -13,6 +14,7 @@ update_and_install_dependencies() {
 # Compile libirecovery if not installed
 compile_libirecovery() {
   if ! which irecovery >> /dev/null; then
+    echo 'Compiling libirecovery'
     git clone https://github.com/libimobiledevice/libirecovery.git /home/pi/libirecovery
     cd /home/pi/libirecovery/
     ./autogen.sh
@@ -29,6 +31,7 @@ compile_libirecovery() {
 update_piRa1n() {
   # Update piRa1n-web if installed
   if [ -d /home/pi/piRa1n-web ]; then
+    echo 'Updating piRa1n-web'
     rm -rf $(find /home/pi/piRa1n-web -mindepth 1 -maxdepth 1 -not -name 'update.out')
     git clone https://github.com/raspberryenvoie/piRa1n-web.git  /home/pi/tmp_piRa1n-web/
     mv $(find /home/pi/tmp_piRa1n-web/ -mindepth 1 -maxdepth 1) /home/pi/piRa1n-web/
@@ -67,6 +70,7 @@ EOF
   fi
 
   # Update piRa1n
+  echo 'Updating piRa1n'
   cp /home/pi/piRa1n/piRa1n.conf /tmp/
   rm -rf  /home/pi/piRa1n/
   git clone https://github.com/raspberryenvoie/piRa1n.git  /home/pi/piRa1n/
@@ -75,6 +79,7 @@ EOF
 }
 
 update_checkra1n() {
+  echo 'Updating checkra1n'
   cd /home/pi/piRa1n/
   curl -Lko checkra1n $checkra1n_source
   chmod +x checkra1n
@@ -89,11 +94,13 @@ update_checkra1n() {
 }
 
 fix_permissions() {
+  echo 'Fixing permissions'
   chown -R pi:pi /home/pi/piRa1n*/
   chmod -R 755 /home/pi/piRa1n*/
 }
 
 enable_at_startup() {
+  echo 'Enabling piRa1n at startup'
   rm -f /lib/systemd/system/piRa1n.service
   cat << EOF > /etc/systemd/system/piRa1n.service
 [Unit]

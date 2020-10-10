@@ -5,7 +5,6 @@ checkra1n_source='https://assets.checkra.in/downloads/linux/cli/arm/d751f4b245bd
 update_and_install_dependencies() {
   echo 'Updating the system and installing dependencies'
   apt-get update
-  dpkg --configure -a
   apt-get upgrade -y
   apt-get install -y git usbmuxd libimobiledevice6 libimobiledevice-utils \
   build-essential checkinstall git autoconf automake libtool-bin libreadline-dev \
@@ -33,9 +32,9 @@ update_piRa1n() {
   # Update piRa1n-web if installed
   if [ -d /home/pi/piRa1n-web ]; then
     echo 'Updating piRa1n-web'
-    rm -rf $(find /home/pi/piRa1n-web -mindepth 1 -maxdepth 1 -not -name 'update.out')
+    rm -rf "$(find /home/pi/piRa1n-web -mindepth 1 -maxdepth 1 -not -name 'update.out')"
     git clone https://github.com/raspberryenvoie/piRa1n-web.git  /home/pi/tmp_piRa1n-web/
-    mv $(find /home/pi/tmp_piRa1n-web/ -mindepth 1 -maxdepth 1) /home/pi/piRa1n-web/
+    mv "$(find /home/pi/tmp_piRa1n-web/ -mindepth 1 -maxdepth 1)" /home/pi/piRa1n-web/
     rm -rf /home/pi/tmp_piRa1n-web/
     # Overwrite /var/www/html/ with new files
     rm -rf /var/www/html/*
@@ -72,11 +71,11 @@ EOF
 
   # Update piRa1n
   echo 'Updating piRa1n'
-  cp /home/pi/piRa1n/piRa1n.conf /tmp/
+  [ -f /home/pi/piRa1n/piRa1n.conf ] && { mv /home/pi/piRa1n/piRa1n.conf /tmp/; piRa1n_config='1'; }
   rm -rf  /home/pi/piRa1n/
   git clone https://github.com/raspberryenvoie/piRa1n.git  /home/pi/piRa1n/
   # Put back piRa1n.conf
-  mv /tmp/piRa1n.conf /home/pi/piRa1n/
+  [ $piRa1n_config = '1' ] && mv /tmp/piRa1n.conf /home/pi/piRa1n/
 }
 
 update_checkra1n() {

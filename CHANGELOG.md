@@ -1,10 +1,14 @@
+# v5.2.1
+### Changed
+- Put checkra1n executable in the repo to avoid issues while downloading it from the Pi
+
 # v5.2
 ### Added
-- Create a new `pi` user if it doesn't exist: installing piRa1n will work if the there is no `pi` user.
+- Create a new `pi` user if it doesn't exist: installing piRa1n will work if the there is no `pi` user
 ### Changed
 - Cleaned up a lot of code
 - piRa1n-web v2.0
-- Use Armbian instead of Raspbian for the Banana Pi M2 Zero for better compatibility with USB ports.
+- Use Armbian instead of Raspbian for the Banana Pi M2 Zero for better compatibility with USB ports
 
 # v5.1
 ### Changed

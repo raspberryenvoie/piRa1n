@@ -74,7 +74,7 @@ systemctl start piRa1n.service
 
 read -p $'\n''Would you like to install piRa1n-web? [Y/n] ' install_piRa1n_web
 case $install_piRa1n_web in
-  [yY][eE][sS]|[yY] )
+  [yY][eE][sS]|[yY])
     curl -Lsk https://raw.githubusercontent.com/raspberryenvoie/piRa1n-web/master/install_piRa1n-web.sh | bash
     ;;
 esac

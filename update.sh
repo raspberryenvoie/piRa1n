@@ -119,7 +119,7 @@ if wget -q -T 0.5 -t 1 --spider https://duckduckgo.com; then
   update_and_install_dependencies > /var/log/piRa1n_updates.log 2>&1 || { echo 'Failed to update the system and to install the dependencies. See /var/log/piRa1n_updates.log for more info.'; exit 1; }
   compile_libirecovery >> /var/log/piRa1n_updates.log 2>&1 || { echo 'Failed to compile libirecovery. See /var/log/piRa1n_updates.log for more info.'; exit 1; }
 
-  echo '[2/3] Updating piRa1n and piRa1n-web (if installed) and checkra1n...'
+  echo '[2/3] Updating piRa1n, piRa1n-web (if installed) and checkra1n...'
   update_piRa1n >> /var/log/piRa1n_updates.log 2>&1 || { echo 'Failed to update piRa1n and piRa1n-web (if installed). See /var/log/piRa1n_updates.log for more info.'; exit 1; }
 
   echo '[3/3] Enabling piRa1n at startup...'

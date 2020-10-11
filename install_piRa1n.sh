@@ -1,8 +1,6 @@
 #!/bin/bash
 [[ $EUID -ne 0 ]] && { echo 'Please run as root'; exit 1; }
 
-checkra1n_source='https://assets.checkra.in/downloads/linux/cli/arm/d751f4b245bd4071c571654607ca4058e9e7dc4a5fa30639024b6067eebf5c3b/checkra1n'
-
 echo -e "\033[0;32m#####################################"
 echo -e "\033[0;32m#                                   #\033[0m"
 echo -e "\033[0;32m#  \033[0;36mWelcome to the piRa1n installer  \033[0;32m#\033[0m"
@@ -38,12 +36,10 @@ rm -rf libirecovery/
 # Install piRa1n
 git clone https://github.com/raspberryenvoie/piRa1n.git
 
-# Install checkra1n
+# Create file with version of checkra1n
 cd /home/pi/piRa1n/
-curl -Lko checkra1n $checkra1n_source
-chmod +x checkra1n
 ./checkra1n --version > checkra1n_version 2>&1
-# Keep second line
+# Keep only second line
 sed -i -n -e 2p checkra1n_version
 # Remove '# '
 sed -i 's/# //g' checkra1n_version

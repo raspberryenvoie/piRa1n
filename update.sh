@@ -1,5 +1,4 @@
 #!/bin/sh
-checkra1n_source='https://assets.checkra.in/downloads/linux/cli/arm/d751f4b245bd4071c571654607ca4058e9e7dc4a5fa30639024b6067eebf5c3b/checkra1n'
 
 # Update the system and install dependencies
 update_and_install_dependencies() {
@@ -69,20 +68,15 @@ EOF
     cd -
   fi
 
-  # Update piRa1n
   echo 'Updating piRa1n'
   [ -f /home/pi/piRa1n/piRa1n.conf ] && { mv /home/pi/piRa1n/piRa1n.conf /tmp/; piRa1n_config='1'; }
   rm -rf  /home/pi/piRa1n/
   git clone https://github.com/raspberryenvoie/piRa1n.git  /home/pi/piRa1n/
   # Put back piRa1n.conf
   [ $piRa1n_config = '1' ] && mv /tmp/piRa1n.conf /home/pi/piRa1n/
-}
 
-update_checkra1n() {
-  echo 'Updating checkra1n'
+  echo 'Creating a file with version of checkra1n'
   cd /home/pi/piRa1n/
-  curl -Lko checkra1n $checkra1n_source
-  chmod +x checkra1n
   ./checkra1n --version > checkra1n_version 2>&1
   # Keep only second line
   sed -i -n -e 2p checkra1n_version
@@ -91,9 +85,7 @@ update_checkra1n() {
   # Lower case
   sed -i 's/\(.*\)/\L\1/' checkra1n_version
   cd -
-}
 
-fix_permissions() {
   echo 'Fixing permissions'
   chown -R pi:pi /home/pi/piRa1n*/
   chmod -R 755 /home/pi/piRa1n*/
@@ -123,20 +115,14 @@ EOF
 if wget -q -T 0.5 -t 1 --spider https://duckduckgo.com; then
   systemctl stop piRa1n.service
 
-  echo '[1/5] Updating the system and installing the dependencies...'
+  echo '[1/3] Updating the system and installing the dependencies...'
   update_and_install_dependencies > /var/log/piRa1n_updates.log 2>&1 || { echo 'Failed to update the system and to install the dependencies. See /var/log/piRa1n_updates.log for more info.'; exit 1; }
   compile_libirecovery >> /var/log/piRa1n_updates.log 2>&1 || { echo 'Failed to compile libirecovery. See /var/log/piRa1n_updates.log for more info.'; exit 1; }
 
-  echo '[2/5] Updating piRa1n and piRa1n-web (if installed)...'
+  echo '[2/3] Updating piRa1n and piRa1n-web (if installed) and checkra1n...'
   update_piRa1n >> /var/log/piRa1n_updates.log 2>&1 || { echo 'Failed to update piRa1n and piRa1n-web (if installed). See /var/log/piRa1n_updates.log for more info.'; exit 1; }
 
-  echo '[3/5] Updating checkra1n...'
-  update_checkra1n >> /var/log/piRa1n_updates.log 2>&1 || { echo 'Failed to update checkra1n. See /var/log/piRa1n_updates.log for more info.'; exit 1; }
-
-  echo '[4/5] Fixing file permissions...'
-  fix_permissions >> /var/log/piRa1n_updates.log 2>&1 || { echo 'Failed to fix file permissions. See /var/log/piRa1n_updates.log for more info.'; exit 1; }
-
-  echo '[5/5] Enabling piRa1n at startup...'
+  echo '[3/3] Enabling piRa1n at startup...'
   enable_at_startup >> /var/log/piRa1n_updates.log 2>&1 || { echo 'Failed to enable piRa1n at startup. See /var/log/piRa1n_updates.log for more info.'; exit 1; }
   cat << EOF
 All done!

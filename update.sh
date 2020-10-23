@@ -4,7 +4,7 @@
 update_and_install_dependencies() {
   echo 'Updating the system and installing dependencies'
   apt-get update
-  apt-get upgrade -y
+  #apt-get upgrade -y
   apt-get install -y git usbmuxd libimobiledevice6 libimobiledevice-utils \
   build-essential checkinstall git autoconf automake libtool-bin libreadline-dev \
   libusb-1.0-0-dev libusbmuxd-tools sshpass

@@ -1,10 +1,9 @@
 #!/bin/sh
 
-# Update the system and install dependencies
-update_and_install_dependencies() {
-  echo 'Updating the system and installing dependencies'
+# Install dependencies
+install_dependencies() {
+  echo 'Installing dependencies'
   apt-get update
-  #apt-get upgrade -y
   apt-get install -y git usbmuxd libimobiledevice6 libimobiledevice-utils \
   build-essential checkinstall git autoconf automake libtool-bin libreadline-dev \
   libusb-1.0-0-dev libusbmuxd-tools sshpass
@@ -115,8 +114,8 @@ EOF
 if wget -q -T 0.5 -t 1 --spider https://duckduckgo.com; then
   systemctl stop piRa1n.service
 
-  echo '[1/3] Updating the system and installing the dependencies...'
-  update_and_install_dependencies > /var/log/piRa1n_updates.log 2>&1 || { echo 'Failed to update the system and to install the dependencies. See /var/log/piRa1n_updates.log for more info.'; exit 1; }
+  echo '[1/3] Installing dependencies...'
+  install_dependencies > /var/log/piRa1n_updates.log 2>&1 || { echo 'Failed to install dependencies. See /var/log/piRa1n_updates.log for more info.'; exit 1; }
   compile_libirecovery >> /var/log/piRa1n_updates.log 2>&1 || { echo 'Failed to compile libirecovery. See /var/log/piRa1n_updates.log for more info.'; exit 1; }
 
   echo '[2/3] Updating piRa1n, piRa1n-web (if installed) and checkra1n...'

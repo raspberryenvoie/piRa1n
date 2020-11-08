@@ -1,8 +1,12 @@
-# v5.2.1
+# v5.3 - 2020-11-08
+### Changed
+- Updated checkra1n to 0.12.0 beta
+
+# v5.2.1 - 2020-10-11
 ### Changed
 - Put checkra1n executable in the repo to avoid issues while downloading it from the Pi
 
-# v5.2
+# v5.2 - 2020-10-10
 ### Added
 - Create a new `pi` user if it doesn't exist: installing piRa1n will work if the there is no `pi` user
 ### Changed
@@ -10,7 +14,7 @@
 - piRa1n-web v2.0
 - Use Armbian instead of Raspbian for the Banana Pi M2 Zero for better compatibility with USB ports
 
-# v5.1
+# v5.1 - 2020-09-22
 ### Changed
 - Updated checkra1n to 0.11 beta
 

@@ -127,7 +127,7 @@ if wget -q -T 0.5 -t 1 --spider https://duckduckgo.com; then
 All done!
 
 What's new ?
-  - The checkra1n binary has been moved to the piRa1n repo. So this should fix issues while downloading checkra1n from your Pi
+  - Updated checkra1n to 0.12.0 beta
 EOF
 # [ -d /home/pi/piRa1n-web ] && echo '  - piRa1n-web has been completely rewritten and redesigned.'
 else

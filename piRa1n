@@ -31,6 +31,19 @@ case $1 in
   -U|--update-from-piRa1n-web )
     nohup curl -Lsk https://raw.githubusercontent.com/raspberryenvoie/piRa1n/master/update.sh | sh > /home/pi/piRa1n-web/update.out 2>&1 &
     ;;
+  -r|--recovery-mode )
+    if idevice_id -l > /dev/null 2>&1 && [[ -n $(idevice_id -l) ]]; then
+	echo "Entering recovery mode..."
+	ideviceenterrecovery "$(idevice_id -l)"
+	sleep 15s
+	if [[ $idevice_recovery_mode != '1' ]]; then
+	  idevice_recovery_mode='1'
+	  echo "iDevice is in recovery mode."
+	  /usr/local/bin/irecovery -c 'setenv auto-boot true'
+	  /usr/local/bin/irecovery -c 'saveenv'
+	fi
+    fi
+    ;;
   -s|--shutdown )
     echo 'See you soon :)'
     sleep 2
@@ -107,6 +120,8 @@ OPTIONS
     Install odysseyra1n.
   -i, --install-piRa1n-web
     Install piRa1n-web (A web interface to control piRa1n).
+  -r, --recovery-mode
+    Enter recovery mode (useful for A11 chips that don't really like the auto-recovery mode setting)
   -e, --exit-recovery-mode
     Exit recovery mode (useful when your iDevice is stuck in recovery mode).
   -l, --look-for-updates

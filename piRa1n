@@ -121,7 +121,7 @@ OPTIONS
   -i, --install-piRa1n-web
     Install piRa1n-web (A web interface to control piRa1n).
   -r, --recovery-mode
-    Enter recovery mode (useful for A11 chips that don't really like the auto-recovery mode setting)
+    Enter recovery mode (useful for A11 chips that don't really like the auto recovery mode setting)
   -e, --exit-recovery-mode
     Exit recovery mode (useful when your iDevice is stuck in recovery mode).
   -l, --look-for-updates

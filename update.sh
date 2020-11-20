@@ -127,7 +127,7 @@ if wget -q -T 0.5 -t 1 --spider https://duckduckgo.com; then
 All done!
 
 What's new ?
-  - Fixed to enter recovery mode from CLI/piRa1n-web thanks to JoeyEamigh
+  - Fixed entering recovery mode from CLI/piRa1n-web
 EOF
 # [ -d /home/pi/piRa1n-web ] && echo '  - piRa1n-web has been completely rewritten and redesigned.'
 else

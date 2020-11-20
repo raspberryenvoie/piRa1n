@@ -57,17 +57,21 @@ case $1 in
     curl -Lsk https://raw.githubusercontent.com/raspberryenvoie/piRa1n-web/master/install_piRa1n-web.sh | bash
     ;;
   -r|--recovery-mode )
-    if idevice_id -l > /dev/null 2>&1 && [[ -n $(idevice_id -l) ]]; then
-	    echo 'Entering recovery mode...'
-	    ideviceenterrecovery "$(idevice_id -l)"
-	    sleep 15s
-	    if [[ $idevice_recovery_mode != '1' ]]; then
-	      idevice_recovery_mode='1'
-	      echo 'iDevice is in recovery mode.'
-	      /usr/local/bin/irecovery -c 'setenv auto-boot true'
-	      /usr/local/bin/irecovery -c 'saveenv'
-	    fi
-    fi
+    while true; do
+      # Enter recovery mode if iDevice is connected
+      if idevice_id -l > /dev/null 2>&1 && [[ -n $(idevice_id -l) ]]; then
+        echo 'Entering recovery mode...'
+        ideviceenterrecovery "$(idevice_id -l)"
+        sleep 4
+      # Check if iDevice is in recovery mode
+      elif lsusb | grep -q 'Recovery'; then
+        echo 'iDevice is in recovery mode.'
+        /usr/local/bin/irecovery -c 'setenv auto-boot true'
+        /usr/local/bin/irecovery -c 'saveenv'
+        exit
+      fi
+      sleep 1
+    done
     ;;
   -e|--exit-recovery-mode )
     echo 'Exiting recovery mode...'

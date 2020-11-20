@@ -1,3 +1,7 @@
+# v5.4.1 - 2020-11-20
+# Fixed
+- Entering recovery mode manually
+
 # v5.4 - 2020-11-19
 # Added
 - Support to enter recovery mode manually

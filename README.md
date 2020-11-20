@@ -33,4 +33,4 @@ Read the [changelog file](https://github.com/raspberryenvoie/piRa1n/blob/master/
 - [libimobiledevice](https://github.com/libimobiledevice/) for [libimobiledevice](https://github.com/libimobiledevice/libimobiledevice) and [libirecovery](https://github.com/libimobiledevice/libirecovery)
 - CoolStar for [odysseyra1n](https://github.com/coolstar/Odyssey-bootstrap)
 - [The Procursus Team](https://github.com/ProcursusTeam/) for [Procursus](https://github.com/ProcursusTeam/Procursus)
-- [JoeyEamigh](https://github.com/JoeyEamigh) for adding support to enter recovery mode from CLI/piRa1n-web
+- [JoeyEamigh](https://github.com/JoeyEamigh) for helping to add support to enter recovery mode from CLI/piRa1n-web

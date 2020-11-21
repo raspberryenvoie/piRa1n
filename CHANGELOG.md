@@ -1,3 +1,7 @@
+# v5.5 - 2020-11-21
+### Changed
+- Updated checkra1n to 0.12.1 beta
+
 # v5.4.1 - 2020-11-20
 # Fixed
 - Entering recovery mode manually

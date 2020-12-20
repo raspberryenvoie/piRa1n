@@ -7,8 +7,8 @@
 [Here](https://youtu.be/lqGb8SG-VII) is a demo of piRa1n.
 
 # Important notes
-- piRa1n only works on a Raspberry Pi 4! The other versions of the Raspberry Pi are not supported. However, it works on a Banana Pi M2 Zero.
-- Make an [iCloud/iTunes backup](https://support.apple.com/en-us/HT203977) before jailbreaking, so that you can go back if something goes wrong.
+- piRa1n only works on a Raspberry Pi 4, other versions of the RPi won't work. However, it works on a Banana Pi M2 Zero.
+- Make an [iCloud/iTunes backup](https://support.apple.com/en-us/HT203977) before jailbreaking, so that you can go back if something goes wrong
 
 # Usage
 ### Parts list
@@ -33,4 +33,4 @@ Read the [changelog file](https://github.com/raspberryenvoie/piRa1n/blob/master/
 - [libimobiledevice](https://github.com/libimobiledevice/) for [libimobiledevice](https://github.com/libimobiledevice/libimobiledevice) and [libirecovery](https://github.com/libimobiledevice/libirecovery)
 - CoolStar for [odysseyra1n](https://github.com/coolstar/Odyssey-bootstrap)
 - [The Procursus Team](https://github.com/ProcursusTeam/) for [Procursus](https://github.com/ProcursusTeam/Procursus)
-- [JoeyEamigh](https://github.com/JoeyEamigh) for helping to add support to enter recovery mode from CLI/piRa1n-web
+- [JoeyEamigh](https://github.com/JoeyEamigh) who suggested with his PR to add an option to manually enter recovery mode from CLI/piRa1n-web

@@ -1,3 +1,7 @@
+# v5.6 - 2021-01-02
+### Changed
+- Updated checkra1n to 0.12.2 beta
+
 # v5.5 - 2020-11-21
 ### Changed
 - Updated checkra1n to 0.12.1 beta

@@ -1,9 +1,10 @@
 #!/bin/sh
 
-# Install dependencies
-install_dependencies() {
-  echo 'Installing dependencies'
+# Update the system and install dependencies
+sys_updates_and_dependencies() {
+  echo 'Updating the system and installing dependencies'
   apt-get update
+  apt upgrade -y
   apt-get install -y git usbmuxd libimobiledevice6 libimobiledevice-utils \
   build-essential checkinstall git autoconf automake libtool-bin libreadline-dev \
   libusb-1.0-0-dev libusbmuxd-tools sshpass
@@ -114,8 +115,8 @@ EOF
 if wget -q -T 0.5 -t 1 --spider https://duckduckgo.com; then
   systemctl stop piRa1n.service
 
-  echo '[1/3] Installing dependencies...'
-  install_dependencies > /var/log/piRa1n_updates.log 2>&1 || { echo 'Failed to install dependencies. See /var/log/piRa1n_updates.log for more info.'; exit 1; }
+  echo '[1/3] Updating the system and installing dependencies...'
+  sys_updates_and_dependencies > /var/log/piRa1n_updates.log 2>&1 || { echo 'Failed to install dependencies/update the system. See /var/log/piRa1n_updates.log for more info.'; exit 1; }
   compile_libirecovery >> /var/log/piRa1n_updates.log 2>&1 || { echo 'Failed to compile libirecovery. See /var/log/piRa1n_updates.log for more info.'; exit 1; }
 
   echo '[2/3] Updating piRa1n, piRa1n-web (if installed) and checkra1n...'
@@ -127,7 +128,7 @@ if wget -q -T 0.5 -t 1 --spider https://duckduckgo.com; then
 All done!
 
 What's new ?
-  - Updated checkra1n to 0.12.1 beta
+  - Updated checkra1n to 0.12.2 beta
 EOF
 # [ -d /home/pi/piRa1n-web ] && echo '  - piRa1n-web has been completely rewritten and redesigned.'
 else

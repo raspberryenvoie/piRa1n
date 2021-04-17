@@ -38,6 +38,7 @@ case $1 in
     ;;
   -o|--odysseyra1n )
     systemctl stop piRa1n.service
+    cd /home/pi/
     curl -Lko odysseyra1n.sh https://raw.githubusercontent.com/coolstar/Odyssey-bootstrap/master/procursus-deploy-linux-macos.sh
     chmod +x odysseyra1n.sh
     sed -i 's/.*read -p.*//g' odysseyra1n.sh

@@ -128,7 +128,8 @@ if wget -q -T 0.5 -t 1 --spider https://duckduckgo.com; then
 All done!
 
 What's new ?
-  - Updated checkra1n to 0.12.2 beta
+  - Updated checkra1n to 0.12.3 beta
+  - Update odysseyra1n option
 EOF
 # [ -d /home/pi/piRa1n-web ] && echo '  - piRa1n-web has been completely rewritten and redesigned.'
 else

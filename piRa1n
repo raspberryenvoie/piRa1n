@@ -44,7 +44,7 @@ case $1 in
     sed -i 's/.*read -p.*//g' odysseyra1n.sh
     sed -i 's/scp -P4444/sshpass -p "alpine" scp -P4444/g' odysseyra1n.sh
     sed -i 's/ssh -p4444/sshpass -p "alpine" ssh -p4444/g' odysseyra1n.sh
-    sed -i 's/curl -L/curl -Lk/g' odysseyra1n.sh
+    sed -i 's/curl -sL/curl -sLk/g' odysseyra1n.sh
     sed -i '/curl -Lk/asleep 7' odysseyra1n.sh
     ./odysseyra1n.sh
     ;;

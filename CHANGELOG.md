@@ -1,3 +1,7 @@
+# v5.8 - 2021-05-12
+## Changed
+- Updated checkra1n to 0.12.4 beta
+
 # v5.7.1 - 2021-05-08
 ## Changed
 - Updated the odysseyra1n option

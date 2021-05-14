@@ -1,5 +1,4 @@
 #!/bin/sh
-
 # Update the system and install dependencies
 sys_updates_and_dependencies() {
   echo 'Updating the system and installing dependencies'
@@ -14,14 +13,14 @@ sys_updates_and_dependencies() {
 compile_libirecovery() {
   if ! which irecovery >> /dev/null; then
     echo 'Compiling libirecovery'
-    git clone https://github.com/libimobiledevice/libirecovery.git /home/pi/libirecovery
-    cd /home/pi/libirecovery/
+    git clone 'https://github.com/libimobiledevice/libirecovery.git' /home/pi/libirecovery
+    cd /home/pi/libirecovery/ || exit
     ./autogen.sh
-    cd /home/pi/libirecovery/
+    cd /home/pi/libirecovery/ || exit
     make
     make install
     ldconfig
-    cd /home/pi/
+    cd /home/pi/ || exit
     rm -rf libirecovery/
   fi
 }
@@ -31,9 +30,10 @@ update_piRa1n() {
   # Update piRa1n-web if installed
   if [ -d /home/pi/piRa1n-web ]; then
     echo 'Updating piRa1n-web'
-    find /home/pi/piRa1n-web -mindepth 1 -maxdepth 1 -not -name 'update.out' | xargs rm -rf
-    git clone https://github.com/raspberryenvoie/piRa1n-web.git  /home/pi/tmp_piRa1n-web/
-    find /home/pi/tmp_piRa1n-web/ -mindepth 1 -maxdepth 1 -exec mv {} /home/pi/piRa1n-web/ \;
+    find /home/pi/piRa1n-web -mindepth 1 -maxdepth 1 -not -name 'update.out' -exec rm -rf {} +
+    git clone 'https://github.com/raspberryenvoie/piRa1n-web.git' /home/pi/tmp_piRa1n-web/
+    # Use find to move .git/ too
+    find /home/pi/tmp_piRa1n-web/ -mindepth 1 -maxdepth 1 -exec mv {} /home/pi/piRa1n-web/ +
     rm -rf /home/pi/tmp_piRa1n-web/
     # Overwrite /var/www/html/ with new files
     rm -rf /var/www/html/*
@@ -52,39 +52,39 @@ update_piRa1n() {
       rm -f "$temp_sudoers"
     fi
     # Add new sudoers file
-    cd /tmp/
-    cat << EOF > piRa1n-web
-# piRa1n-web
-www-data ALL=(ALL) NOPASSWD: /home/pi/piRa1n/piRa1n
-EOF
-    sudo chown root:root piRa1n-web
-    chmod 440 piRa1n-web
-    if visudo -qcf piRa1n-web; then
-      mv piRa1n-web /etc/sudoers.d/
-    else
-      echo 'Failed to add the sudoers file!'
-    fi
-    rm -f piRa1n-web
-    cd -
+    (
+      cd /tmp/ || exit
+      echo '# piRa1n-web' > piRa1n-web
+      echo 'www-data ALL=(ALL) NOPASSWD: /home/pi/piRa1n/piRa1n'
+      sudo chown root:root piRa1n-web
+      chmod 440 piRa1n-web
+      if visudo -qcf piRa1n-web; then
+        mv piRa1n-web /etc/sudoers.d/
+      else
+        echo 'Failed to add the sudoers file!'
+      fi
+      rm -f piRa1n-web
+    )
   fi
 
   echo 'Updating piRa1n'
   [ -f /home/pi/piRa1n/piRa1n.conf ] && { mv /home/pi/piRa1n/piRa1n.conf /tmp/; piRa1n_config='1'; }
   rm -rf  /home/pi/piRa1n/
-  git clone https://github.com/raspberryenvoie/piRa1n.git  /home/pi/piRa1n/
+  git clone 'https://github.com/raspberryenvoie/piRa1n.git'  /home/pi/piRa1n/
   # Put back piRa1n.conf
   [ $piRa1n_config = '1' ] && mv /tmp/piRa1n.conf /home/pi/piRa1n/
 
   echo 'Creating a file with version of checkra1n'
-  cd /home/pi/piRa1n/
-  ./checkra1n --version > checkra1n_version 2>&1
-  # Keep only second line
-  sed -i -n -e 2p checkra1n_version
-  # Remove '# '
-  sed -i 's/# //g' checkra1n_version
-  # Lower case
-  sed -i 's/\(.*\)/\L\1/' checkra1n_version
-  cd -
+  (
+    cd /home/pi/piRa1n/ || exit
+    ./checkra1n --version > checkra1n_version 2>&1
+    # Keep only second line
+    sed -i -n -e 2p checkra1n_version
+    # Remove '# '
+    sed -i 's/# //g' checkra1n_version
+    # Lower case
+    sed -i 's/\(.*\)/\L\1/' checkra1n_version
+  )
 
   echo 'Fixing permissions'
   chown -R pi:pi /home/pi/piRa1n*/
@@ -112,7 +112,7 @@ EOF
 }
 
 # Update if internet is availble
-if wget -q -T 0.5 -t 1 --spider https://duckduckgo.com; then
+if wget -q -T 0.5 -t 1 --spider 'https://duckduckgo.com'; then
   systemctl stop piRa1n.service
 
   echo '[1/3] Updating the system and installing dependencies...'
@@ -128,9 +128,19 @@ if wget -q -T 0.5 -t 1 --spider https://duckduckgo.com; then
 All done!
 
 What's new ?
-  - Updated checkra1n to 0.12.4 beta
+  piRa1n:
+    - Made all scripts POSIX compliant
+    - Switched from Bash to Dash because it's roughly 4x times faster according to the ArchWiki (sh is a symlink to Dash on Debian)
+    - Cleaned up a lot of code
+    - Fixed odysseyra1n option
 EOF
-# [ -d /home/pi/piRa1n-web ] && echo '  - piRa1n-web has been completely rewritten and redesigned.'
+  if [ -d /home/pi/piRa1n-web ]; then
+  cat << EOF
+  piRa1n-web:
+    - Made install script POSIX compliant
+    - Updated odysseyra1n instructions
+EOF
+  fi
 else
   echo 'Cannot update. Check your network connection.'
 fi

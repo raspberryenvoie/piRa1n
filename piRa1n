@@ -1,14 +1,18 @@
-#!/bin/bash
-[[ $EUID -ne 0 ]] && { echo 'Please run as root'; exit 1; }
+#!/bin/sh
+[ "$(id -u)" -ne 0 ] && {
+    echo 'Please run as root'
+    exit 1
+}
 
-case $1 in
+case "$1" in
   -c|--configure )
     systemctl stop piRa1n.service
     echo '# piRa1n configuration'> /home/pi/piRa1n/piRa1n.conf
     for i in 'Auto_Recovery_Mode' 'Auto_Shutdown' 'Safe_Mode' 'Verbose_Boot'; do
       while true; do
-        read -p "$i [Y/n] " input
-        case $input in
+        printf '%s [Y/n]' "$i"
+        read -r input
+        case "$input" in
           [yY][eE][sS]|[yY] )
             echo "$i=true" >> /home/pi/piRa1n/piRa1n.conf
             break
@@ -26,10 +30,10 @@ case $1 in
     echo 'The changes have been applied'
     ;;
   -u|--update )
-    curl -Lsk https://raw.githubusercontent.com/raspberryenvoie/piRa1n/master/update.sh | sh
+    curl -Lsk 'https://raw.githubusercontent.com/raspberryenvoie/piRa1n/master/update.sh' | sh
     ;;
   -U|--update-from-piRa1n-web )
-    nohup curl -Lsk https://raw.githubusercontent.com/raspberryenvoie/piRa1n/master/update.sh | sh > /home/pi/piRa1n-web/update.out 2>&1 &
+    nohup curl -Lsk 'https://raw.githubusercontent.com/raspberryenvoie/piRa1n/master/update.sh' | sh > /home/pi/piRa1n-web/update.out 2>&1 &
     ;;
   -s|--shutdown )
     echo 'See you soon :)'
@@ -38,23 +42,24 @@ case $1 in
     ;;
   -o|--odysseyra1n )
     systemctl stop piRa1n.service
-    cd /home/pi/
-    curl -Lko odysseyra1n.sh https://raw.githubusercontent.com/coolstar/Odyssey-bootstrap/master/procursus-deploy-linux-macos.sh
+    cd /home/pi/ || exit
+    curl -Lsko odysseyra1n.sh 'https://raw.githubusercontent.com/coolstar/Odyssey-bootstrap/master/procursus-deploy-linux-macos.sh'
     chmod +x odysseyra1n.sh
-    sed -i 's/.*read -p.*//g' odysseyra1n.sh
-    sed -i 's/scp -P4444/sshpass -p "alpine" scp -P4444/g' odysseyra1n.sh
-    sed -i 's/ssh -p4444/sshpass -p "alpine" ssh -p4444/g' odysseyra1n.sh
+    sed -i 's/.*read.*//g' odysseyra1n.sh
+    sed -i 's/scp/sshpass -p "alpine" scp/g' odysseyra1n.sh
+    sed -i 's/ssh/sshpass -p "alpine" ssh/g' odysseyra1n.sh
     sed -i 's/curl -sL/curl -sLk/g' odysseyra1n.sh
-    sed -i '/curl -Lk/asleep 7' odysseyra1n.sh
+    sed -i '/curl -sLk/asleep 7' odysseyra1n.sh
     ./odysseyra1n.sh
+    rm -f odysseyra1n.sh
     ;;
   -i|--install-piRa1n-web )
-    curl -Lsk https://raw.githubusercontent.com/raspberryenvoie/piRa1n-web/master/install_piRa1n-web.sh | bash
+    curl -Lsk 'https://raw.githubusercontent.com/raspberryenvoie/piRa1n-web/master/install_piRa1n-web.sh' | bash
     ;;
   -r|--recovery-mode )
     while true; do
       # Enter recovery mode if iDevice is connected
-      if idevice_id -l > /dev/null 2>&1 && [[ -n $(idevice_id -l) ]]; then
+      if idevice_id -l > /dev/null 2>&1 && [ -n "$(idevice_id -l)" ]; then
         echo 'Entering recovery mode...'
         ideviceenterrecovery "$(idevice_id -l)"
         sleep 4
@@ -75,14 +80,14 @@ case $1 in
     /usr/local/bin/irecovery -c 'reboot'
     ;;
   -l|--look-for-updates )
-    remote_version="$(curl -Lsk https://raw.githubusercontent.com/raspberryenvoie/piRa1n/master/version)"
-    local_version="$(< /home/pi/piRa1n/version)"
-    if [[ -z $remote_version ]]; then
+    remote_version="$(curl -Lsk 'https://raw.githubusercontent.com/raspberryenvoie/piRa1n/master/version')"
+    local_version="$(cat /home/pi/piRa1n/version)"
+    if [ -z "$remote_version" ]; then
       echo '2'
     else
-      if [[ $remote_version = "$local_version" ]]; then
+      if [ "$remote_version" = "$local_version" ]; then
         echo '0'
-      elif [[ $remote_version != "$local_version" ]]; then
+      elif [ "$remote_version" != "$local_version" ]; then
         echo '1'
       fi
     fi

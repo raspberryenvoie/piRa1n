@@ -1,3 +1,11 @@
+# v5.9 - 2021-05-12
+## Changed
+- Made all scripts POSIX compliant
+- Switched from Bash to Dash because it's roughly 4x times faster according to the [ArchWiki](https://wiki.archlinux.org/index.php/Dash) (sh is a symlink to Dash on Debian)
+- Cleaned up a lot of code
+## Fixed
+- Odysseyra1n option
+
 # v5.8 - 2021-05-12
 ## Changed
 - Updated checkra1n to 0.12.4 beta

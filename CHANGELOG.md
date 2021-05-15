@@ -1,6 +1,10 @@
+# v5.9.2 - 2021-05-15
+## Fixed
+- Update script (sudoers file not correctly created)
+
 # v5.9.1 - 2021-05-15
 ## Fixed
-- Update script
+- Update script (piRa1n-web not updated)
 
 # v5.9 - 2021-05-14
 ## Changed

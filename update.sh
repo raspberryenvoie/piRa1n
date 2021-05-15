@@ -55,7 +55,7 @@ update_piRa1n() {
     (
       cd /tmp/ || exit
       echo '# piRa1n-web' > piRa1n-web
-      echo 'www-data ALL=(ALL) NOPASSWD: /home/pi/piRa1n/piRa1n'
+      echo 'www-data ALL=(ALL) NOPASSWD: /home/pi/piRa1n/piRa1n' > piRa1n-web
       sudo chown root:root piRa1n-web
       chmod 440 piRa1n-web
       if visudo -qcf piRa1n-web; then

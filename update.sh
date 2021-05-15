@@ -30,10 +30,10 @@ update_piRa1n() {
   # Update piRa1n-web if installed
   if [ -d /home/pi/piRa1n-web ]; then
     echo 'Updating piRa1n-web'
-    find /home/pi/piRa1n-web -mindepth 1 -maxdepth 1 -not -name 'update.out' -exec rm -rf {} +
     git clone 'https://github.com/raspberryenvoie/piRa1n-web.git' /home/pi/tmp_piRa1n-web/
+    find /home/pi/piRa1n-web -mindepth 1 -maxdepth 1 -not -name 'update.out' -exec rm -rf {} +
     # Use find to move .git/ too
-    find /home/pi/tmp_piRa1n-web/ -mindepth 1 -maxdepth 1 -exec mv {} /home/pi/piRa1n-web/ +
+    find /home/pi/tmp_piRa1n-web/ -mindepth 1 -maxdepth 1 -exec mv {} /home/pi/piRa1n-web/ \;
     rm -rf /home/pi/tmp_piRa1n-web/
     # Overwrite /var/www/html/ with new files
     rm -rf /var/www/html/*

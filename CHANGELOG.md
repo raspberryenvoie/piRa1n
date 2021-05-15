@@ -1,4 +1,8 @@
-# v5.9 - 2021-05-12
+# v5.9.1 - 2021-05-15
+## Fixed
+- Update script
+
+# v5.9 - 2021-05-14
 ## Changed
 - Made all scripts POSIX compliant
 - Switched from Bash to Dash because it's roughly 4x times faster according to the [ArchWiki](https://wiki.archlinux.org/index.php/Dash) (sh is a symlink to Dash on Debian)

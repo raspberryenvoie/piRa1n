@@ -10,7 +10,7 @@ case "$1" in
     echo '# piRa1n configuration'> /home/pi/piRa1n/piRa1n.conf
     for i in 'Auto_Recovery_Mode' 'Auto_Shutdown' 'Safe_Mode' 'Verbose_Boot'; do
       while true; do
-        printf '%s [Y/n]' "$i"
+        printf '%s [Y/n] ' "$i"
         read -r input
         case "$input" in
           [yY][eE][sS]|[yY] )

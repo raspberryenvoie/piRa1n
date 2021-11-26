@@ -49,7 +49,7 @@ case "$1" in
     sed -i 's/scp/sshpass -p "alpine" scp/g' odysseyra1n.sh
     sed -i 's/ssh/sshpass -p "alpine" ssh/g' odysseyra1n.sh
     sed -i 's/curl -sL/curl -sLk/g' odysseyra1n.sh
-    sed -i '/curl -sLk/asleep 7' odysseyra1n.sh
+    sed -i '/github\.com\/coolstar\/Odyssey-bootstrap\/raw\/master\/org.swift.libswift.*_iphoneos-arm\.deb/asleep 7' odysseyra1n.sh
     ./odysseyra1n.sh
     rm -f odysseyra1n.sh
     ;;
